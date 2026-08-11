@@ -1,0 +1,25 @@
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.emailjs.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none';
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), camera=(), microphone=()
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+/*.pdf
+  X-Robots-Tag: noindex, nofollow
+
+/*.jpg
+  X-Robots-Tag: noindex, nofollow
+
+/*.jpeg
+  X-Robots-Tag: noindex, nofollow
+
+/*.png
+  X-Robots-Tag: noindex, nofollow
+
+/*.webp
+  X-Robots-Tag: noindex, nofollow
+
+/*.gif
+  X-Robots-Tag: noindex, nofollow
