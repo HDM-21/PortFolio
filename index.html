@@ -686,6 +686,25 @@ body{cursor:auto!important;}
   }
   .eyebrow::-webkit-scrollbar{display:none;}
 }
+  /* ═══ VRAIE CORRECTION — TEXTE QUI DÉBORDE HORS DE L'ÉCRAN ═══ */
+@media(max-width:640px){
+  .tl-item{grid-template-columns:0 1px minmax(0,1fr)!important;}
+}
+.tl-content,
+.tl-company-row,
+.tl-list,
+.tl-list li,
+.school-info,
+.cert-card,
+.pcard-body,
+.sk-item,
+.badge-row,
+.about-grid > *,
+.contact-grid > *{
+  min-width:0!important;
+}
+.tl-company-row{flex-wrap:wrap!important;}
+.sk-item{flex-wrap:wrap!important;gap:8px!important;}
 </style>
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
