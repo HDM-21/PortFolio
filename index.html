@@ -651,6 +651,22 @@ body.light .footer-bottom{color:rgba(26,37,53,.22);}
   .stat-val{font-size:1.4rem!important;}
   .sec-title{font-size:clamp(1.4rem,8vw,1.8rem)!important;}
 }
+  /* ═══ FIX MOBILE — CURSEUR + BADGE ═══ */
+@media (hover: none), (pointer: coarse){
+  #cur-dot{display:none!important;}
+  body{cursor:auto!important;}
+}
+.pcard-badge{
+  display:inline-block!important;
+  width:fit-content!important;
+  max-width:max-content!important;
+  height:auto!important;
+  line-height:1.4!important;
+  font-size:9px!important;
+  padding:4px 11px!important;
+  border-radius:999px!important;
+  white-space:nowrap!important;
+}
 </style>
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -1590,7 +1606,7 @@ function openProjModal(key){
     <h1 class="proj-fs-title">${d.title}</h1>
     <p class="proj-fs-subtitle">${d.subtitle}</p>
   `;
-  if(d.img){html+=`<img src="${d.img}" class="proj-fs-hero-img" alt="${d.title}" onerror="this.style.display='none'">`;}
+  if(d.img){html+=`<img src="${d.img}" class="proj-fs-hero-img" alt="${d.title}" onclick="openLightbox('${d.img}','${d.title.replace(/'/g,"\\'")}')" onerror="this.style.display='none'" style="cursor:pointer">`;}
   d.sections.forEach(sec=>{
     html+=`
       <div class="proj-fs-divider"></div>
