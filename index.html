@@ -119,7 +119,7 @@ body.light #cur-dot{background:var(--accent2);}
 .logo-bracket{color:var(--accent2);font-size:16px;}
 .nav-right{display:flex;align-items:center;gap:8px;}
 .nav-links{display:flex;align-items:center;gap:2px;}
-.nav-link{font-family:var(--font-mono);font-size:12px;font-weight:700;letter-spacing:.1em;color:rgba(234,244,240,.42);text-decoration:none;padding:7px 13px;border-radius:5px;transition:color .22s,background .22s;text-transform:uppercase;display:flex;align-items:center;gap:6px;}
+.nav-link{font-family:var(--font-mono);font-size:12px;font-weight:700;letter-spacing:.1em;color:rgba(234,244,240,.42);text-decoration:none;padding:7px 13px;border-radius:5px;transition:color .22s,background .22s;text-transform:uppercase;display:flex;align-items:center;gap:6px;white-space:nowrap;}
 .nav-link .nn{color:var(--accent2);opacity:.65;font-size:9px;flex:0 0 18px;text-align:right;font-variant-numeric:tabular-nums;}
 .nav-link:hover{color:var(--text);background:rgba(0,255,153,.055);}
 .nav-link.active{color:var(--accent2);}
@@ -205,9 +205,9 @@ body.light #cur-dot{background:var(--accent2);}
 .school-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s;}
 .school-card:hover .school-img{transform:scale(1.04);}
 .school-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(3,7,9,.85) 0%,transparent 60%);display:flex;align-items:flex-end;padding:13px;}
-.school-img-label{font-family:var(--font-mono);font-size:9px;color:var(--accent2);letter-spacing:.13em;text-transform:uppercase;}
+.school-img-label{font-family:var(--font-mono);font-size:9px;color:var(--accent2);letter-spacing:.13em;text-transform:uppercase;display:flex;align-items:center;gap:6px;}
 .school-info{padding:13px 15px;}
-.school-name{font-size:13px;font-weight:700;color:var(--text);margin-bottom:3px;}
+.school-name{font-size:13px;font-weight:700;color:var(--text);margin-bottom:9px;}
 .school-field{font-family:var(--font-mono);font-size:10px;color:var(--accent2);letter-spacing:.04em;}
 .int-title{font-family:var(--font-mono);font-size:9px;color:var(--muted2);text-transform:uppercase;letter-spacing:.17em;margin-bottom:14px;display:flex;align-items:center;gap:8px;font-weight:700;}
 .int-title::before{content:'//';color:var(--accent2);opacity:.6;}
@@ -235,7 +235,8 @@ body.light .int-chip-ico{background:rgba(37,99,235,.09);border-color:rgba(37,99,
 .sk-lvl{font-family:var(--font-mono);font-size:11px;font-weight:700;padding:4px 11px;border-radius:100px;letter-spacing:.05em;}
 .sk-lvl.e{background:rgba(0,255,153,.11);color:var(--accent2);border:1px solid rgba(0,255,153,.18);}
 .sk-lvl.a{background:rgba(0,200,255,.09);color:var(--accent);border:1px solid rgba(0,200,255,.16);}
-.sk-lvl.i{background:rgba(234,244,240,.045);color:var(--muted2);border:1px solid rgba(234,244,240,.075);}
+.sk-lvl.i{background:rgba(255,176,32,.12);color:#ffb020;border:1px solid rgba(255,176,32,.28);}
+body.light .sk-lvl.i{background:rgba(180,90,0,.1);color:#b5560d;border:1px solid rgba(180,90,0,.28);}
 
 /* ═══ TERMINAL ═══ */
 .terminal{background:rgba(3,7,9,.92);border:1px solid rgba(0,255,153,.14);border-radius:10px;overflow:hidden;margin-bottom:30px;backdrop-filter:blur(22px);}
@@ -346,9 +347,9 @@ body.light .int-chip-ico{background:rgba(37,99,235,.09);border-color:rgba(37,99,
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:58px;
   background:linear-gradient(135deg,rgba(0,255,153,.07),rgba(0,180,255,.05),rgba(124,58,237,.08));
 }
+.pcard-img-placeholder svg{width:46px;height:46px;opacity:.55;color:var(--accent2);}
 
 /* FIX: gradient overlay inside image section */
 .pcard-overlay{
@@ -552,6 +553,7 @@ body.light .retour-ico{background:rgba(37,99,235,.08);border-color:rgba(37,99,23
 .c-link{display:flex;align-items:center;gap:13px;padding:13px 15px;background:rgba(255,255,255,.018);border:1px solid rgba(255,255,255,.055);border-radius:8px;text-decoration:none;color:var(--muted);font-size:15px;transition:all .22s;}
 .c-link:hover{border-color:rgba(0,255,153,.22);color:var(--text);background:rgba(0,255,153,.025);}
 .c-ico{width:32px;height:32px;border-radius:7px;background:rgba(0,255,153,.07);border:1px solid rgba(0,255,153,.14);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:10.5px;font-weight:700;color:var(--accent2);flex-shrink:0;}
+.c-ico svg{width:15px;height:15px;}
 .c-form{display:flex;flex-direction:column;gap:13px;}
 .f-field{display:flex;flex-direction:column;gap:6px;}
 .f-field label{font-family:var(--font-mono);font-size:9px;color:var(--muted2);text-transform:uppercase;letter-spacing:.12em;}
@@ -593,10 +595,11 @@ body.light .footer-bottom{color:rgba(26,37,53,.22);}
 }
 @media(max-width:1180px){
   .nav,.nav.scrolled{padding-left:24px;padding-right:24px;}
-  .nav-links{display:none;flex-direction:column;position:fixed;top:0;right:0;bottom:0;width:min(78vw,280px);background:var(--bg);border-left:1px solid var(--border);padding:68px 20px 26px;z-index:490;transform:translateX(100%);transition:transform .3s;gap:4px;}
+  .nav-links{display:none;flex-direction:column;position:fixed;top:0;right:0;bottom:0;width:min(86vw,300px);background:#030709;border-left:1px solid var(--border);padding:68px 20px 26px;z-index:490;transform:translateX(100%);transition:transform .3s;gap:4px;box-shadow:-14px 0 44px rgba(0,0,0,.55);isolation:isolate;}
+  body.light .nav-links{background:#f0f4f8;}
   .nav-links.open{display:flex;transform:translateX(0);}
-  .nav-link{font-size:12.5px;border-radius:7px;align-items:flex-start;gap:10px;padding:10px 12px;line-height:1.5;}
-  .nav-link .nn{flex-shrink:0;width:16px;padding-top:1px;}
+  .nav-link{font-size:12px;border-radius:7px;align-items:center;gap:10px;padding:11px 12px;line-height:1.4;white-space:nowrap;letter-spacing:.05em;}
+  .nav-link .nn{flex-shrink:0;width:18px;padding-top:0;text-align:left;}
   .nav-ham{display:flex;}
   .hero{grid-template-columns:1fr;padding:116px 24px 76px;}
   .about-grid{grid-template-columns:1fr;gap:38px;}
@@ -807,7 +810,7 @@ body.light .term-text{color:var(--muted);}
 <!-- ═══ NAV ═══ -->
 <header class="nav" id="nav">
   <div class="nav-logo">
-    <span title="Maroc 🇲🇦">
+    <span title="Maroc">
       <svg width="20" height="14" viewBox="0 0 20 14" style="border-radius:2px;vertical-align:middle;margin-right:5px;">
         <rect width="20" height="14" fill="#c1272d"/>
         <polygon points="10,3.5 11.2,7.2 7.2,4.6 12.8,4.6 8.8,7.2" fill="#006233"/>
@@ -821,7 +824,7 @@ body.light .term-text{color:var(--muted);}
     <a href="#exp"        class="nav-link"><span class="nn">03</span><span data-fr="Expérience" data-en="Experience">Expérience</span></a>
     <a href="#certs"      class="nav-link"><span class="nn">04</span><span data-fr="Certifications" data-en="Certifications">Certifications</span></a>
     <a href="#proj"       class="nav-link"><span class="nn">05</span><span data-fr="Projets" data-en="Projects">Projets</span></a>
-    <a href="#retour"     class="nav-link"><span class="nn">06</span><span data-fr="Retour d'expérience" data-en="Field Insights">Retour d'expérience</span></a>
+    <a href="#retour"     class="nav-link"><span class="nn">06</span><span data-fr="Retour d'exp." data-en="Field Insights">Retour d'exp.</span></a>
     <a href="#contact"    class="nav-link"><span class="nn">07</span><span data-fr="Contact" data-en="Contact">Contact</span></a>
   </nav>
   <div class="nav-right">
@@ -841,7 +844,7 @@ body.light .term-text{color:var(--muted);}
       <span class="part1" id="part1Text"></span>
       <span class="part2" id="part2Text"><span class="name-glow"></span></span>
     </h1>
-    <p class="hero-role"><span>Réseaux</span> · <span>Télécoms</span> · <span>Cybersécurité</span></p>
+    <p class="hero-role"><span data-fr="Réseaux" data-en="Networks">Réseaux</span> · <span data-fr="Télécoms" data-en="Telecom">Télécoms</span> · <span data-fr="Cybersécurité" data-en="Cybersecurity">Cybersécurité</span></p>
     <p class="hero-desc" data-fr="Ingénieur d'État en Réseaux &amp; Télécommunications, orienté réseaux informatiques, télécoms et sécurité des réseaux et des systèmes. Expériences terrain réalisées chez Synapsis-KS-Morocco, Huawei Technologies Morocco et Marsa Maroc. Certifié ISC² CC · HCIA-5G." data-en="State Engineer in Networks &amp; Telecommunications, focused on IT networks, telecommunications and network &amp; systems security. Field experience at Synapsis-KS-Morocco, Huawei Technologies Morocco and Marsa Maroc. Certified ISC² CC · HCIA-5G.">Ingénieur d'État en Réseaux &amp; Télécommunications, orienté réseaux informatiques, télécoms et sécurité des réseaux et des systèmes. Expériences terrain réalisées chez Synapsis-KS-Morocco, Huawei Technologies Morocco et Marsa Maroc. Certifié ISC² CC · HCIA-5G.</p>
     <div class="hero-cta">
       <a href="#contact" class="btn-main"><span data-fr="Me contacter" data-en="Contact me">Me contacter</span><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -1008,12 +1011,12 @@ body.light .term-text{color:var(--muted);}
       </svg>
     </div>
     <div class="hero-badge">
-      <div class="badge-header">Profil Ingénieur d’État</div>
-      <div class="badge-row"><span class="badge-key">Statut</span><span class="badge-val g">Disponible · CDI/CDD</span></div>
-      <div class="badge-row"><span class="badge-key">École</span><span class="badge-val">ENSA Fès</span></div>
-      <div class="badge-row"><span class="badge-key">Ville</span><span class="badge-val">Casablanca</span></div>
-      <div class="badge-row"><span class="badge-key">Spécialité</span><span class="badge-val">Réseaux &amp; Télécommunications</span></div>
-      <div class="badge-row"><span class="badge-key">Focus</span><span class="badge-val">Sécurité réseaux · Virtualisation · 5G</span></div>
+      <div class="badge-header" data-fr="Profil Ingénieur d'État" data-en="State Engineer Profile">Profil Ingénieur d'État</div>
+      <div class="badge-row"><span class="badge-key" data-fr="Statut" data-en="Status">Statut</span><span class="badge-val g" data-fr="Disponible" data-en="Available · Full-time/Contract">Disponible · CDI/CDD</span></div>
+      <div class="badge-row"><span class="badge-key" data-fr="École" data-en="School">École</span><span class="badge-val">ENSA Fès</span></div>
+      <div class="badge-row"><span class="badge-key" data-fr="Ville" data-en="City">Ville</span><span class="badge-val" data-fr="Casablanca" data-en="Casablanca">Casablanca</span></div>
+      <div class="badge-row"><span class="badge-key" data-fr="Spécialité" data-en="Specialty">Spécialité</span><span class="badge-val" data-fr="Réseaux &amp; Télécommunications" data-en="Networks &amp; Telecommunications">Réseaux &amp; Télécommunications</span></div>
+      <div class="badge-row"><span class="badge-key" data-fr="Focus" data-en="Focus">Focus</span><span class="badge-val" data-fr="Sécurité réseaux · Virtualisation · 5G" data-en="Network security · Virtualization · 5G">Sécurité réseaux · Virtualisation · 5G</span></div>
     </div>
   </div>
 </section>
@@ -1036,31 +1039,31 @@ body.light .term-text{color:var(--muted);}
   <strong>Objectif :</strong> Intégrer une équipe spécialisée en réseaux, télécommunications ou cybersécurité et contribuer à la conception, au déploiement et à la sécurisation d'infrastructures IT et télécoms.
 </p>
       <div class="meta-grid rv d3">
-        <div class="meta-cell"><div class="meta-k">Localisation</div><div class="meta-v">Casablanca, Maroc</div></div>
-        <div class="meta-cell"><div class="meta-k">Formation</div><div class="meta-v">ENSA Fès · Ingénieur d'État</div></div>
-        <div class="meta-cell"><div class="meta-k">Langues</div><div class="meta-v">FR · EN · AR</div></div>
-        <div class="meta-cell"><div class="meta-k">Spécialité</div><div class="meta-v green">Network &amp; Telecommunications</div></div>
+        <div class="meta-cell"><div class="meta-k" data-fr="Localisation" data-en="Location">Localisation</div><div class="meta-v" data-fr="Casablanca, Maroc" data-en="Casablanca, Morocco">Casablanca, Maroc</div></div>
+        <div class="meta-cell"><div class="meta-k" data-fr="Formation" data-en="Education">Formation</div><div class="meta-v" data-fr="ENSA Fès · Ingénieur d'État" data-en="ENSA Fès · State Engineer">ENSA Fès · Ingénieur d'État</div></div>
+        <div class="meta-cell"><div class="meta-k" data-fr="Langues" data-en="Languages">Langues</div><div class="meta-v">FR · EN · AR</div></div>
+        <div class="meta-cell"><div class="meta-k" data-fr="Spécialité" data-en="Specialty">Spécialité</div><div class="meta-v green" data-fr="Réseaux &amp; Télécommunications" data-en="Networks &amp; Telecommunications">Réseaux &amp; Télécommunications</div></div>
       </div>
     </div>
     <div class="about-right rv d1">
       <div class="school-card rv" onclick="openLightbox('Ensa-Fes-Image.jpg','École Nationale des Sciences Appliquées de Fès')">
         <div class="school-img-wrap">
           <img src="Ensa-Fes-Image.jpg" alt="ENSA Fès" class="school-img">
-          <div class="school-img-overlay"><span class="school-img-label">🎓 École d'Ingénierie</span></div>
+          <div class="school-img-overlay"><span class="school-img-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg><span data-fr="École d'Ingénierie" data-en="Engineering School">École d'Ingénierie</span></span></div>
         </div>
         <div class="school-info">
           <div class="school-name">École Nationale des Sciences Appliquées de Fès</div>
-          <div class="school-field">Génie Télécommunications et Réseaux · 2021–2026</div>
+          <div class="school-field" data-fr="Génie Télécommunications et Réseaux · 2021–2026" data-en="Telecommunications &amp; Networks Engineering · 2021–2026">Génie Télécommunications et Réseaux · 2021–2026</div>
         </div>
       </div>
-      <div class="int-title">Domaines d'intérêt</div>
+      <div class="int-title" data-fr="Domaines d'intérêt" data-en="Areas of Interest">Domaines d'intérêt</div>
       <div class="int-grid">
-        <div class="int-chip"><span class="int-chip-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span>Conception &amp; Déploiement</div>
-        <div class="int-chip"><span class="int-chip-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3.5v5.2c0 4.4-3 8.3-7 9.3-4-1-7-4.9-7-9.3V6.5L12 3z"/></svg></span>Pentesting</div>
-        <div class="int-chip"><span class="int-chip-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></span>Monitoring &amp; SIEM</div>
-        <div class="int-chip"><span class="int-chip-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>Virtualisation &amp; Cloud</div>
-        <div class="int-chip"><span class="int-chip-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 16 0M2 12h2M20 12h2M12 2v2M12 20v2"/></svg></span>5G NR &amp; RAN</div>
-        <div class="int-chip"><span class="int-chip-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></span>Sécurité Réseaux &amp; Systèmes</div>
+        <div class="int-chip"><span class="int-chip-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span><span data-fr="Conception &amp; Déploiement" data-en="Design &amp; Deployment">Conception &amp; Déploiement</span></div>
+        <div class="int-chip"><span class="int-chip-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3.5v5.2c0 4.4-3 8.3-7 9.3-4-1-7-4.9-7-9.3V6.5L12 3z"/></svg></span><span data-fr="Pentesting" data-en="Penetration Testing">Pentesting</span></div>
+        <div class="int-chip"><span class="int-chip-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></span><span data-fr="Monitoring &amp; SIEM" data-en="Monitoring &amp; SIEM">Monitoring &amp; SIEM</span></div>
+        <div class="int-chip"><span class="int-chip-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><span data-fr="Virtualisation &amp; Cloud" data-en="Virtualization &amp; Cloud">Virtualisation &amp; Cloud</span></div>
+        <div class="int-chip"><span class="int-chip-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 16 0M2 12h2M20 12h2M12 2v2M12 20v2"/></svg></span><span data-fr="5G NR &amp; RAN" data-en="5G NR &amp; RAN">5G NR &amp; RAN</span></div>
+        <div class="int-chip"><span class="int-chip-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></span><span data-fr="Sécurité Réseaux &amp; Systèmes" data-en="Network &amp; Systems Security">Sécurité Réseaux &amp; Systèmes</span></div>
       </div>
     </div>
   </div>
@@ -1074,62 +1077,56 @@ body.light .term-text{color:var(--muted);}
     <div class="term-bar"><div class="term-dot"></div><div class="term-dot"></div><div class="term-dot"></div><span class="term-title">skills.sh</span></div>
     <div class="term-body">
       <div class="term-line"><span class="term-prompt">$</span><span class="term-text"><span class="kw">scan</span> <span class="str">"Houssameddine.MARCHOUAL"</span> <span class="cmt">--deep</span></span></div>
-      <div class="term-line"><span class="term-prompt">›</span><span class="term-text"><span class="ok">✓</span> TCP/IP, Routage OSPF/BGP — <span class="lvl">Avancé</span></span></div>
-      <div class="term-line"><span class="term-prompt">›</span><span class="term-text"><span class="ok">✓</span> NGFW, SIEM — <span class="lvl">Avancé</span></span></div>
-      <div class="term-line"><span class="term-prompt">›</span><span class="term-text"><span class="ok">✓</span> Supervision : Zabbix, SolarWinds — <span class="lvl">Avancé</span></span></div>
-      <div class="term-line"><span class="term-prompt">›</span><span class="term-text"><span class="ok">✓</span> Linux, Windows Server — <span class="lvl">Avancé</span></span></div>
-      <div class="term-line"><span class="term-prompt">$</span><span class="term-text"><span class="kw">status</span> <span class="ok">READY</span><span class="term-caret"></span></span></div>
+      <div class="term-line"><span class="term-prompt">›</span><span class="term-text"><span class="ok">✓</span> TCP/IP, <span data-fr="Routage" data-en="Routing">Routage</span> OSPF/BGP — <span class="lvl" data-fr="Avancé" data-en="Advanced">Avancé</span></span></div>
+      <div class="term-line"><span class="term-prompt">›</span><span class="term-text"><span class="ok">✓</span> NGFW, SIEM — <span class="lvl" data-fr="Avancé" data-en="Advanced">Avancé</span></span></div>
+      <div class="term-line"><span class="term-prompt">›</span><span class="term-text"><span class="ok">✓</span> <span data-fr="Supervision" data-en="Monitoring">Supervision</span> : Zabbix, SolarWinds — <span class="lvl" data-fr="Avancé" data-en="Advanced">Avancé</span></span></div>
+      <div class="term-line"><span class="term-prompt">›</span><span class="term-text"><span class="ok">✓</span> Linux, Windows Server — <span class="lvl" data-fr="Avancé" data-en="Advanced">Avancé</span></span></div>
+      <div class="term-line"><span class="term-prompt">$</span><span class="term-text"><span class="kw" data-fr="status" data-en="status">status</span> <span class="ok">READY</span><span class="term-caret"></span></span></div>
     </div>
   </div>
   <div class="skills-tabs rv d2">
-    <button class="sk-tab on" data-sk="net">Réseau</button>
-    <button class="sk-tab" data-sk="sec">Sécurité</button>
-    <button class="sk-tab" data-sk="sup">Supervision</button>
-    <button class="sk-tab" data-sk="sys">Systèmes</button>
-    <button class="sk-tab" data-sk="tel">Télécom</button>
-    <button class="sk-tab" data-sk="cloud">Cloud &amp; IoT</button>
+    <button class="sk-tab on" data-sk="net" data-fr="Réseau" data-en="Network">Réseau</button>
+    <button class="sk-tab" data-sk="sec" data-fr="Sécurité" data-en="Security">Sécurité</button>
+    <button class="sk-tab" data-sk="sup" data-fr="Supervision" data-en="Monitoring">Supervision</button>
+    <button class="sk-tab" data-sk="sys" data-fr="Systèmes" data-en="Systems">Systèmes</button>
+    <button class="sk-tab" data-sk="tel" data-fr="Télécom" data-en="Telecom">Télécom</button>
   </div>
   <div class="sk-panels rv d3">
     <div class="sk-panel on" id="sk-net"><div class="sk-items">
-      <div class="sk-item"><span class="sk-name">TCP/IP · DNS · DHCP · NAT</span><span class="sk-lvl a">Avancé</span></div>
-      <div class="sk-item"><span class="sk-name">VLANs · STP · VTP · Trunking</span><span class="sk-lvl a">Avancé</span></div>
-      <div class="sk-item"><span class="sk-name">Routage statique · OSPF · BGP</span><span class="sk-lvl a">Avancé</span></div>
-      <div class="sk-item"><span class="sk-name">Architecture Cisco · RAN</span><span class="sk-lvl a">Avancé</span></div>
-      <div class="sk-item"><span class="sk-name">Cisco IOS · Routage &amp; Commutation</span><span class="sk-lvl a">Avancé</span></div>
-      <div class="sk-item"><span class="sk-name">HPE Aruba L3 · ACL · Inter-VLAN</span><span class="sk-lvl a">Avancé</span></div>
+      <div class="sk-item"><span class="sk-name">TCP/IP · DNS · DHCP · NAT</span><span class="sk-lvl a" data-fr="Avancé" data-en="Advanced">Avancé</span></div>
+      <div class="sk-item"><span class="sk-name">VLANs · STP · VTP · Trunking</span><span class="sk-lvl a" data-fr="Avancé" data-en="Advanced">Avancé</span></div>
+      <div class="sk-item"><span class="sk-name" data-fr="Routage statique · OSPF · BGP" data-en="Static Routing · OSPF · BGP">Routage statique · OSPF · BGP</span><span class="sk-lvl a" data-fr="Avancé" data-en="Advanced">Avancé</span></div>
+      <div class="sk-item"><span class="sk-name" data-fr="Architecture Cisco · RAN" data-en="Cisco Architecture · RAN">Architecture Cisco · RAN</span><span class="sk-lvl a" data-fr="Avancé" data-en="Advanced">Avancé</span></div>
+      <div class="sk-item"><span class="sk-name" data-fr="Cisco IOS · Routage &amp; Commutation" data-en="Cisco IOS · Routing &amp; Switching">Cisco IOS · Routage &amp; Commutation</span><span class="sk-lvl a" data-fr="Avancé" data-en="Advanced">Avancé</span></div>
+      <div class="sk-item"><span class="sk-name">HPE Aruba L3 · ACL · Inter-VLAN</span><span class="sk-lvl a" data-fr="Avancé" data-en="Advanced">Avancé</span></div>
     </div></div>
     <div class="sk-panel" id="sk-sec"><div class="sk-items">
-      <div class="sk-item"><span class="sk-name">Sécurité des réseaux &amp; systèmes d'information</span><span class="sk-lvl a">Avancé</span></div>
-      <div class="sk-item"><span class="sk-name">FortiGate NGFW · VPN IPSec</span><span class="sk-lvl a">Avancé</span></div>
-      <div class="sk-item"><span class="sk-name">Wazuh SIEM · Analyse de logs</span><span class="sk-lvl a">Avancé</span></div>
-      <div class="sk-item"><span class="sk-name">Détection d'intrusions (IDS/IPS)</span><span class="sk-lvl a">Avancé</span></div>
-      <div class="sk-item"><span class="sk-name">Cryptographie &amp; sécurité de l'information</span><span class="sk-lvl a">Avancé</span></div>
-      <div class="sk-item"><span class="sk-name">Tests d'intrusion : Nmap · Metasploit · Burp Suite</span><span class="sk-lvl i">Intermédiaire</span></div>
+      <div class="sk-item"><span class="sk-name" data-fr="Sécurité des réseaux &amp; systèmes d'information" data-en="Network &amp; Information Systems Security">Sécurité des réseaux &amp; systèmes d'information</span><span class="sk-lvl a" data-fr="Avancé" data-en="Advanced">Avancé</span></div>
+      <div class="sk-item"><span class="sk-name">FortiGate NGFW · VPN IPSec</span><span class="sk-lvl a" data-fr="Avancé" data-en="Advanced">Avancé</span></div>
+      <div class="sk-item"><span class="sk-name" data-fr="Wazuh SIEM · Analyse de logs" data-en="Wazuh SIEM · Log Analysis">Wazuh SIEM · Analyse de logs</span><span class="sk-lvl a" data-fr="Avancé" data-en="Advanced">Avancé</span></div>
+      <div class="sk-item"><span class="sk-name" data-fr="Détection d'intrusions (IDS/IPS)" data-en="Intrusion Detection (IDS/IPS)">Détection d'intrusions (IDS/IPS)</span><span class="sk-lvl a" data-fr="Avancé" data-en="Advanced">Avancé</span></div>
+      <div class="sk-item"><span class="sk-name" data-fr="Cryptographie &amp; sécurité de l'information" data-en="Cryptography &amp; Information Security">Cryptographie &amp; sécurité de l'information</span><span class="sk-lvl a" data-fr="Avancé" data-en="Advanced">Avancé</span></div>
+      <div class="sk-item"><span class="sk-name" data-fr="Tests d'intrusion : Nmap · Metasploit · Burp Suite" data-en="Penetration Testing: Nmap · Metasploit · Burp Suite">Tests d'intrusion : Nmap · Metasploit · Burp Suite</span><span class="sk-lvl i" data-fr="Intermédiaire" data-en="Intermediate">Intermédiaire</span></div>
     </div></div>
     <div class="sk-panel" id="sk-tel"><div class="sk-items">
-      <div class="sk-item"><span class="sk-name">5G NR · Architecture NSA / SA</span><span class="sk-lvl a">Avancé</span></div>
-      <div class="sk-item"><span class="sk-name">RAN · BBU · AAU · Massive MIMO</span><span class="sk-lvl a">Avancé</span></div>
-      <div class="sk-item"><span class="sk-name">Réseaux radio mobiles (4G/5G)</span><span class="sk-lvl a">Avancé</span></div>
-      <div class="sk-item"><span class="sk-name">Fibre optique · GPON</span><span class="sk-lvl i">Intermédiaire</span></div>
-      <div class="sk-item"><span class="sk-name">Téléphonie SIP / VoIP</span><span class="sk-lvl i">Intermédiaire</span></div>
+      <div class="sk-item"><span class="sk-name" data-fr="5G NR · Architecture NSA / SA" data-en="5G NR · NSA / SA Architecture">5G NR · Architecture NSA / SA</span><span class="sk-lvl a" data-fr="Avancé" data-en="Advanced">Avancé</span></div>
+      <div class="sk-item"><span class="sk-name">RAN · BBU · AAU · Massive MIMO</span><span class="sk-lvl a" data-fr="Avancé" data-en="Advanced">Avancé</span></div>
+      <div class="sk-item"><span class="sk-name" data-fr="Réseaux radio mobiles (4G/5G)" data-en="Mobile Radio Networks (4G/5G)">Réseaux radio mobiles (4G/5G)</span><span class="sk-lvl a" data-fr="Avancé" data-en="Advanced">Avancé</span></div>
+      <div class="sk-item"><span class="sk-name" data-fr="Fibre optique · GPON" data-en="Fiber Optics · GPON">Fibre optique · GPON</span><span class="sk-lvl i" data-fr="Intermédiaire" data-en="Intermediate">Intermédiaire</span></div>
+      <div class="sk-item"><span class="sk-name" data-fr="Téléphonie SIP / VoIP" data-en="SIP / VoIP Telephony">Téléphonie SIP / VoIP</span><span class="sk-lvl i" data-fr="Intermédiaire" data-en="Intermediate">Intermédiaire</span></div>
     </div></div>
     <div class="sk-panel" id="sk-sup"><div class="sk-items">
-      <div class="sk-item"><span class="sk-name">Zabbix · Nagios · Centreon</span><span class="sk-lvl a">Avancé</span></div>
-      <div class="sk-item"><span class="sk-name">PRTG · SNMP</span><span class="sk-lvl a">Avancé</span></div>
-      <div class="sk-item"><span class="sk-name">Wireshark · GNS3 · Packet Tracer</span><span class="sk-lvl a">Avancé</span></div>
-      <div class="sk-item"><span class="sk-name">Automatisation Bash / Python</span><span class="sk-lvl i">Intermédiaire</span></div>
+      <div class="sk-item"><span class="sk-name">Zabbix · Nagios · Centreon</span><span class="sk-lvl a" data-fr="Avancé" data-en="Advanced">Avancé</span></div>
+      <div class="sk-item"><span class="sk-name">PRTG · SNMP</span><span class="sk-lvl a" data-fr="Avancé" data-en="Advanced">Avancé</span></div>
+      <div class="sk-item"><span class="sk-name">Wireshark · GNS3 · Packet Tracer</span><span class="sk-lvl a" data-fr="Avancé" data-en="Advanced">Avancé</span></div>
+      <div class="sk-item"><span class="sk-name" data-fr="Automatisation Bash / Python" data-en="Bash / Python Automation">Automatisation Bash / Python</span><span class="sk-lvl i" data-fr="Intermédiaire" data-en="Intermediate">Intermédiaire</span></div>
     </div></div>
     <div class="sk-panel" id="sk-sys"><div class="sk-items">
-      <div class="sk-item"><span class="sk-name">Linux (Debian, Ubuntu, Kali)</span><span class="sk-lvl a">Avancé</span></div>
-      <div class="sk-item"><span class="sk-name">Windows Server</span><span class="sk-lvl a">Avancé</span></div>
-      <div class="sk-item"><span class="sk-name">Proxmox VE · Virtualisation</span><span class="sk-lvl a">Avancé</span></div>
-      <div class="sk-item"><span class="sk-name">Docker · Conteneurisation</span><span class="sk-lvl i">Intermédiaire</span></div>
-      <div class="sk-item"><span class="sk-name">Active Directory · DNS serveur</span><span class="sk-lvl i">Intermédiaire</span></div>
-    </div></div>
-    <div class="sk-panel" id="sk-cloud"><div class="sk-items">
-      <div class="sk-item"><span class="sk-name">Virtualisation &amp; Cloud Computing</span><span class="sk-lvl a">Avancé</span></div>
-      <div class="sk-item"><span class="sk-name">Automatisation réseaux &amp; IoT</span><span class="sk-lvl i">Intermédiaire</span></div>
-      <div class="sk-item"><span class="sk-name">SBOM · Cosign · SLSA Level 3</span><span class="sk-lvl i">Intermédiaire</span></div>
+      <div class="sk-item"><span class="sk-name">Linux (Debian, Ubuntu, Kali)</span><span class="sk-lvl a" data-fr="Avancé" data-en="Advanced">Avancé</span></div>
+      <div class="sk-item"><span class="sk-name">Windows Server</span><span class="sk-lvl a" data-fr="Avancé" data-en="Advanced">Avancé</span></div>
+      <div class="sk-item"><span class="sk-name" data-fr="Proxmox VE · Virtualisation" data-en="Proxmox VE · Virtualization">Proxmox VE · Virtualisation</span><span class="sk-lvl a" data-fr="Avancé" data-en="Advanced">Avancé</span></div>
+      <div class="sk-item"><span class="sk-name" data-fr="Docker · Conteneurisation" data-en="Docker · Containerization">Docker · Conteneurisation</span><span class="sk-lvl i" data-fr="Intermédiaire" data-en="Intermediate">Intermédiaire</span></div>
+      <div class="sk-item"><span class="sk-name" data-fr="Active Directory · DNS serveur" data-en="Active Directory · DNS Server">Active Directory · DNS serveur</span><span class="sk-lvl i" data-fr="Intermédiaire" data-en="Intermediate">Intermédiaire</span></div>
     </div></div>
   </div>
 </section>
@@ -1140,18 +1137,18 @@ body.light .term-text{color:var(--muted);}
   <h2 class="sec-title rv" data-fr="Expériences <em>professionnelles</em>" data-en="Professional <em>experience</em>">Expériences <em>professionnelles</em></h2>
   <div class="timeline">
     <div class="tl-item rv">
-      <div class="tl-left"><div class="tl-period">Fév. – Juin 2026</div><div class="tl-badge-exp pfe">PFE</div></div>
+      <div class="tl-left"><div class="tl-period" data-fr="Fév. – Juin 2026" data-en="Feb. – Jun 2026">Fév. – Juin 2026</div><div class="tl-badge-exp pfe">PFE</div></div>
       <div class="tl-spine"><div class="tl-dot-exp"></div><div class="tl-line-exp"></div></div>
       <div class="tl-content">
-        <h3 class="tl-title-exp">Projet de Fin d'Études : Audit, Conception et Intégration d'une Infrastructure Réseau Évolutive</h3>
+        <h3 class="tl-title-exp" data-fr="Projet de Fin d'Études : Audit, Conception et Intégration d'une Infrastructure Réseau Évolutive" data-en="Final Year Project: Audit, Design and Integration of a Scalable Network Infrastructure">Projet de Fin d'Études : Audit, Conception et Intégration d'une Infrastructure Réseau Évolutive</h3>
         <div class="tl-company-row">
           <img src="Synapsis-KS-Morocco-Logo.jpeg" class="tl-logo" alt="Synapsis-KS-Morocco" onclick="openLightbox('Synapsis-KS-Morocco-Logo.jpeg','Synapsis-KS-Morocco')" title="Cliquer pour agrandir">
           <span class="tl-company">Synapsis-KS-Morocco · Casablanca</span>
         </div>
         <ul class="tl-list">
-          <li><strong>Contexte :</strong> Audit complet et refonte sécurité d'une infrastructure non documentée.</li>
-          <li><strong>Solution :</strong> Cartographie réseau + segmentation VLAN/DMZ + FortiGate + SIEM Wazuh.</li>
-          <li><strong>Résultats :</strong> disponibilité portée à <strong>99.9%</strong>, réduction incidents de <strong>40%</strong>, visibilité logs <strong>+65%</strong>.</li>
+          <li data-fr="<strong>Contexte :</strong> Audit complet et refonte sécurité d'une infrastructure non documentée." data-en="<strong>Context:</strong> Full audit and security overhaul of an undocumented infrastructure."><strong>Contexte :</strong> Audit complet et refonte sécurité d'une infrastructure non documentée.</li>
+          <li data-fr="<strong>Solution :</strong> Cartographie réseau + segmentation VLAN/DMZ + FortiGate + SIEM Wazuh." data-en="<strong>Solution:</strong> Network mapping + VLAN/DMZ segmentation + FortiGate + Wazuh SIEM."><strong>Solution :</strong> Cartographie réseau + segmentation VLAN/DMZ + FortiGate + SIEM Wazuh.</li>
+          <li data-fr="<strong>Résultats :</strong> disponibilité portée à <strong>99.9%</strong>, réduction incidents de <strong>40%</strong>, visibilité logs <strong>+65%</strong>." data-en="<strong>Results:</strong> availability raised to <strong>99.9%</strong>, incidents reduced by <strong>40%</strong>, log visibility <strong>+65%</strong>."><strong>Résultats :</strong> disponibilité portée à <strong>99.9%</strong>, réduction incidents de <strong>40%</strong>, visibilité logs <strong>+65%</strong>.</li>
         </ul>
         <div class="stage-img-grid">
           <img src="Stage-PFE-1.jpg" class="stage-img" alt="PFE 1" onclick="openLightbox('Stage-PFE-1.jpg','PFE Synapsis — Vue 1')">
@@ -1163,18 +1160,18 @@ body.light .term-text{color:var(--muted);}
       </div>
     </div>
     <div class="tl-item rv d1">
-      <div class="tl-left"><div class="tl-period">Juil. – Août 2025</div><div class="tl-badge-exp stg">PFA</div></div>
+      <div class="tl-left"><div class="tl-period" data-fr="Juil. – Août 2025" data-en="Jul. – Aug 2025">Juil. – Août 2025</div><div class="tl-badge-exp stg">PFA</div></div>
       <div class="tl-spine"><div class="tl-dot-exp"></div><div class="tl-line-exp"></div></div>
       <div class="tl-content">
-        <h3 class="tl-title-exp">Stage PFA — Déploiement 5G &amp; Massive MIMO</h3>
+        <h3 class="tl-title-exp" data-fr="Stage PFA — Déploiement 5G &amp; Massive MIMO" data-en="PFA Internship — 5G &amp; Massive MIMO Deployment">Stage PFA — Déploiement 5G &amp; Massive MIMO</h3>
         <div class="tl-company-row">
           <img src="Huawei-Logo.png" class="tl-logo" alt="Huawei" onclick="openLightbox('Huawei-Logo.png','Huawei Technologies Morocco')">
           <span class="tl-company">Huawei Technologies Morocco · Casablanca</span>
         </div>
         <ul class="tl-list">
-          <li><strong>Contexte :</strong> Participation à des opérations terrain de déploiement 5G NSA.</li>
-          <li><strong>Solution :</strong> Site survey, intégration BBU/AAU, contrôle qualité et reporting technique.</li>
-          <li><strong>Résultats :</strong> réduction anomalies de <strong>30%</strong>, amélioration couverture <strong>+18%</strong> sur zone pilote.</li>
+          <li data-fr="<strong>Contexte :</strong> Participation à des opérations terrain de déploiement 5G NSA." data-en="<strong>Context:</strong> Involvement in field operations for 5G NSA deployment."><strong>Contexte :</strong> Participation à des opérations terrain de déploiement 5G NSA.</li>
+          <li data-fr="<strong>Solution :</strong> Site survey, intégration BBU/AAU, contrôle qualité et reporting technique." data-en="<strong>Solution:</strong> Site survey, BBU/AAU integration, quality control and technical reporting."><strong>Solution :</strong> Site survey, intégration BBU/AAU, contrôle qualité et reporting technique.</li>
+          <li data-fr="<strong>Résultats :</strong> réduction anomalies de <strong>30%</strong>, amélioration couverture <strong>+18%</strong> sur zone pilote." data-en="<strong>Results:</strong> anomalies reduced by <strong>30%</strong>, coverage improved <strong>+18%</strong> on pilot area."><strong>Résultats :</strong> réduction anomalies de <strong>30%</strong>, amélioration couverture <strong>+18%</strong> sur zone pilote.</li>
         </ul>
         <div class="stage-img-grid">
           <img src="Stage-PFA-1.jpg" class="stage-img" alt="PFA 1" onclick="openLightbox('Stage-PFA-1.jpg','PFA Huawei — Vue 1')">
@@ -1186,18 +1183,18 @@ body.light .term-text{color:var(--muted);}
       </div>
     </div>
     <div class="tl-item rv d2">
-      <div class="tl-left"><div class="tl-period">Juil. – Sept. 2024</div><div class="tl-badge-exp ini">Initiation</div></div>
+      <div class="tl-left"><div class="tl-period" data-fr="Juil. – Sept. 2024" data-en="Jul. – Sep 2024">Juil. – Sept. 2024</div><div class="tl-badge-exp ini" data-fr="Initiation" data-en="Introductory">Initiation</div></div>
       <div class="tl-spine"><div class="tl-dot-exp"></div></div>
       <div class="tl-content">
-        <h3 class="tl-title-exp">Stage Initiation — Supervision Réseau &amp; Infrastructure Cisco</h3>
+        <h3 class="tl-title-exp" data-fr="Stage Initiation — Supervision Réseau &amp; Infrastructure Cisco" data-en="Introductory Internship — Network Monitoring &amp; Cisco Infrastructure">Stage Initiation — Supervision Réseau &amp; Infrastructure Cisco</h3>
         <div class="tl-company-row">
           <img src="Marsa Maroc-logo.png" class="tl-logo" alt="Marsa Maroc" onclick="openLightbox('Marsa Maroc-logo.png','Marsa Maroc')">
-          <span class="tl-company">Marsa Maroc – Port de Casablanca · Département SI</span>
+          <span class="tl-company" data-fr="Marsa Maroc – Port de Casablanca · Département SI" data-en="Marsa Maroc – Port of Casablanca · IT Department">Marsa Maroc – Port de Casablanca · Département SI</span>
         </div>
         <ul class="tl-list">
-          <li><strong>Contexte :</strong> Renforcement supervision réseau et optimisation infrastructure LAN.</li>
-          <li><strong>Solution :</strong> Déploiement Zabbix/PRTG, activation SNMP et optimisation VLAN/STP/VTP.</li>
-          <li><strong>Résultats :</strong> réduction du temps de détection de <strong>45%</strong>, visibilité réseau <strong>+70%</strong>.</li>
+          <li data-fr="<strong>Contexte :</strong> Renforcement supervision réseau et optimisation infrastructure LAN." data-en="<strong>Context:</strong> Strengthening network monitoring and optimizing LAN infrastructure."><strong>Contexte :</strong> Renforcement supervision réseau et optimisation infrastructure LAN.</li>
+          <li data-fr="<strong>Solution :</strong> Déploiement Zabbix/PRTG, activation SNMP et optimisation VLAN/STP/VTP." data-en="<strong>Solution:</strong> Zabbix/PRTG deployment, SNMP activation and VLAN/STP/VTP optimization."><strong>Solution :</strong> Déploiement Zabbix/PRTG, activation SNMP et optimisation VLAN/STP/VTP.</li>
+          <li data-fr="<strong>Résultats :</strong> réduction du temps de détection de <strong>45%</strong>, visibilité réseau <strong>+70%</strong>." data-en="<strong>Results:</strong> detection time reduced by <strong>45%</strong>, network visibility <strong>+70%</strong>."><strong>Résultats :</strong> réduction du temps de détection de <strong>45%</strong>, visibilité réseau <strong>+70%</strong>.</li>
         </ul>
         <div class="stage-img-grid">
           <img src="Stage-initiation-1.jpg" class="stage-img" alt="Init 1" onclick="openLightbox('Stage-initiation-1.jpg','Stage Initiation Marsa Maroc — Vue 1')">
@@ -1216,12 +1213,12 @@ body.light .term-text{color:var(--muted);}
   <div class="sec-label rv"><span class="num">04</span><span data-fr="Certifications" data-en="Certifications">Certifications</span></div>
   <h2 class="sec-title rv" data-fr="Certifications <em>&amp; formations</em>" data-en="Certifications <em>&amp; training</em>">Certifications <em>&amp; formations</em></h2>
   <div class="cert-grid">
-    <div class="cert-card rv"><div class="cert-row"><img src="ISC2.jpg" class="cert-img" alt="ISC2" onclick="openLightbox('ISC2.jpg','ISC² CC')"><div><div class="cert-top"><span class="cert-iss">ISC²</span><span class="cert-date">Nov. 2025</span></div><div class="cert-name">Certified in Cybersecurity (CC)</div><div class="cert-desc">Risk management, governance, IAM, security operations.</div><a href="https://www.credly.com/badges/47dfc77c-79a2-4ff2-ad2c-b000daaae3f3" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;margin-top:8px;font-family:var(--font-mono);font-size:9.5px;color:var(--accent2);letter-spacing:.05em;text-decoration:none;">✓ Vérifier la certification<svg viewBox="0 0 16 16" fill="none" style="width:10px"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div></div>
-    <div class="cert-card rv d1"><div class="cert-row"><img src="HCIA-5G.jpg" class="cert-img" alt="HCIA 5G" onclick="openLightbox('HCIA-5G.jpg','HCIA-5G V2.0')"><div><div class="cert-top"><span class="cert-iss">Huawei</span><span class="cert-date">Nov. 2025</span></div><div class="cert-name">HCIA-5G V2.0</div><div class="cert-desc">Architecture 5G NR, NSA/SA, RAN, Massive MIMO.</div></div></div></div>
-    <div class="cert-card rv d2"><div class="cert-row"><img src="CERTIFICATION_HCIA_DATACOM_Houssameddine_MARCHOUAL.png" class="cert-img" alt="HCIA Datacom" onclick="openLightbox('CERTIFICATION_HCIA_DATACOM_Houssameddine_MARCHOUAL.png','HCIA-Datacom V1.0')"><div><div class="cert-top"><span class="cert-iss">Huawei</span><span class="cert-date">Oct. 2024</span></div><div class="cert-name">HCIA-Datacom V1.0</div><div class="cert-desc">Routing, switching, data communication fundamentals.</div></div></div></div>
-    <div class="cert-card rv"><div class="cert-row"><img src="photo_HCIA_ACCESS_V2.5_Certificate.png" class="cert-img" alt="HCIA Access" onclick="openLightbox('photo_HCIA_ACCESS_V2.5_Certificate.png','HCIA-Access V2.5')"><div><div class="cert-top"><span class="cert-iss">Huawei</span><span class="cert-date">Nov. 2025</span></div><div class="cert-name">HCIA-Access V2.5</div><div class="cert-desc">Réseaux d'accès, switching, infrastructure.</div></div></div></div>
-    <div class="cert-card rv d1"><div class="cert-row"><img src="Cisco.png" class="cert-img" alt="Cisco" onclick="openLightbox('Cisco.png','Cisco Network Technician Career Path')"><div><div class="cert-top"><span class="cert-iss">Cisco</span><span class="cert-date">Janv. 2025</span></div><div class="cert-name">Network Technician Career Path</div><div class="cert-desc">Compétences fondamentales Cisco : LAN, switching.</div></div></div></div>
-    <div class="cert-card rv d2"><div class="cert-row"><img src="Encryption.png" class="cert-img" alt="Internet Society" onclick="openLightbox('Encryption.png','Internet Society — Threats to Encryption')"><div><div class="cert-top"><span class="cert-iss">Internet Society</span><span class="cert-date">Oct. 2025</span></div><div class="cert-name">Threats to Encryption</div><div class="cert-desc">Risques liés au chiffrement et menaces modernes.</div><a href="https://certificates.isoc.org/98f445ec-284c-4c1f-a474-cb5a6253b86d" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;margin-top:8px;font-family:var(--font-mono);font-size:9.5px;color:var(--accent2);letter-spacing:.05em;text-decoration:none;">✓ Vérifier la certification<svg viewBox="0 0 16 16" fill="none" style="width:10px"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div></div>
+    <div class="cert-card rv"><div class="cert-row"><img src="ISC2.jpg" class="cert-img" alt="ISC2" onclick="openLightbox('ISC2.jpg','ISC² CC')"><div><div class="cert-top"><span class="cert-iss">ISC²</span><span class="cert-date" data-fr="Nov. 2025" data-en="Nov. 2025">Nov. 2025</span></div><div class="cert-name">Certified in Cybersecurity (CC)</div><div class="cert-desc" data-fr="Risk management, governance, IAM, security operations." data-en="Risk management, governance, IAM, security operations.">Risk management, governance, IAM, security operations.</div><a href="https://www.credly.com/badges/47dfc77c-79a2-4ff2-ad2c-b000daaae3f3" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;margin-top:8px;font-family:var(--font-mono);font-size:9.5px;color:var(--accent2);letter-spacing:.05em;text-decoration:none;"><span data-fr="✓ Vérifier la certification" data-en="✓ Verify certification">✓ Vérifier la certification</span><svg viewBox="0 0 16 16" fill="none" style="width:10px"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div></div>
+    <div class="cert-card rv d1"><div class="cert-row"><img src="HCIA-5G.jpg" class="cert-img" alt="HCIA 5G" onclick="openLightbox('HCIA-5G.jpg','HCIA-5G V2.0')"><div><div class="cert-top"><span class="cert-iss">Huawei</span><span class="cert-date">Nov. 2025</span></div><div class="cert-name">HCIA-5G V2.0</div><div class="cert-desc" data-fr="Architecture 5G NR, NSA/SA, RAN, Massive MIMO." data-en="5G NR architecture, NSA/SA, RAN, Massive MIMO.">Architecture 5G NR, NSA/SA, RAN, Massive MIMO.</div></div></div></div>
+    <div class="cert-card rv d2"><div class="cert-row"><img src="CERTIFICATION_HCIA_DATACOM_Houssameddine_MARCHOUAL.png" class="cert-img" alt="HCIA Datacom" onclick="openLightbox('CERTIFICATION_HCIA_DATACOM_Houssameddine_MARCHOUAL.png','HCIA-Datacom V1.0')"><div><div class="cert-top"><span class="cert-iss">Huawei</span><span class="cert-date">Oct. 2024</span></div><div class="cert-name">HCIA-Datacom V1.0</div><div class="cert-desc" data-fr="Routing, switching, data communication fundamentals." data-en="Routing, switching, data communication fundamentals.">Routing, switching, data communication fundamentals.</div></div></div></div>
+    <div class="cert-card rv"><div class="cert-row"><img src="photo_HCIA_ACCESS_V2.5_Certificate.png" class="cert-img" alt="HCIA Access" onclick="openLightbox('photo_HCIA_ACCESS_V2.5_Certificate.png','HCIA-Access V2.5')"><div><div class="cert-top"><span class="cert-iss">Huawei</span><span class="cert-date">Nov. 2025</span></div><div class="cert-name">HCIA-Access V2.5</div><div class="cert-desc" data-fr="Réseaux d'accès, switching, infrastructure." data-en="Access networks, switching, infrastructure.">Réseaux d'accès, switching, infrastructure.</div></div></div></div>
+    <div class="cert-card rv d1"><div class="cert-row"><img src="Cisco.png" class="cert-img" alt="Cisco" onclick="openLightbox('Cisco.png','Cisco Network Technician Career Path')"><div><div class="cert-top"><span class="cert-iss">Cisco</span><span class="cert-date">Janv. 2025</span></div><div class="cert-name">Network Technician Career Path</div><div class="cert-desc" data-fr="Compétences fondamentales Cisco : LAN, switching." data-en="Cisco core skills: LAN, switching.">Compétences fondamentales Cisco : LAN, switching.</div></div></div></div>
+    <div class="cert-card rv d2"><div class="cert-row"><img src="Encryption.png" class="cert-img" alt="Internet Society" onclick="openLightbox('Encryption.png','Internet Society — Threats to Encryption')"><div><div class="cert-top"><span class="cert-iss">Internet Society</span><span class="cert-date">Oct. 2025</span></div><div class="cert-name">Threats to Encryption</div><div class="cert-desc" data-fr="Risques liés au chiffrement et menaces modernes." data-en="Encryption-related risks and modern threats.">Risques liés au chiffrement et menaces modernes.</div><a href="https://certificates.isoc.org/98f445ec-284c-4c1f-a474-cb5a6253b86d" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;margin-top:8px;font-family:var(--font-mono);font-size:9.5px;color:var(--accent2);letter-spacing:.05em;text-decoration:none;"><span data-fr="✓ Vérifier la certification" data-en="✓ Verify certification">✓ Vérifier la certification</span><svg viewBox="0 0 16 16" fill="none" style="width:10px"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div></div>
   </div>
 </section>
 
@@ -1235,17 +1232,17 @@ body.light .term-text{color:var(--muted);}
       <div class="pcard-glow"></div>
       <div class="pcard-img-section">
         <img src="Architecture Réseau Proposee - Synapsis KS Morocco.png" class="pcard-img" alt="Architecture PFE" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="pcard-img-placeholder" style="display:none">🔒</div>
+        <div class="pcard-img-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
         <div class="pcard-overlay"></div>
       </div>
       <div class="pcard-body">
-        <span class="pcard-badge pro">Professionnel · 2026</span>
+        <span class="pcard-badge pro" data-fr="Professionnel · 2026" data-en="Professional · 2026">Professionnel · 2026</span>
         <div class="pcard-meta"><span class="pcard-num">01</span></div>
-        <h3 class="pcard-title">Audit &amp; Sécurisation d'Infrastructure Réseau (PFE)</h3>
-        <p class="pcard-desc">Audit complet, refonte architecture et sécurisation du SI back-office. Déploiement FortiGate, SIEM Wazuh et supervision Zabbix.</p>
-        <div class="pcard-results"><span class="pcard-result-chip">99.9% uptime</span><span class="pcard-result-chip">Incidents −40%</span><span class="pcard-result-chip">Logs +65%</span></div>
+        <h3 class="pcard-title" data-fr="Audit &amp; Sécurisation d'Infrastructure Réseau (PFE)" data-en="Network Infrastructure Audit &amp; Security (Final Year Project)">Audit &amp; Sécurisation d'Infrastructure Réseau (PFE)</h3>
+        <p class="pcard-desc" data-fr="Audit complet, refonte architecture et sécurisation du SI back-office. Déploiement FortiGate, SIEM Wazuh et supervision Zabbix." data-en="Full audit, architecture overhaul and back-office IS security. FortiGate, Wazuh SIEM and Zabbix monitoring deployment.">Audit complet, refonte architecture et sécurisation du SI back-office. Déploiement FortiGate, SIEM Wazuh et supervision Zabbix.</p>
+        <div class="pcard-results"><span class="pcard-result-chip" data-fr="99.9% uptime" data-en="99.9% uptime">99.9% uptime</span><span class="pcard-result-chip" data-fr="Incidents −40%" data-en="Incidents −40%">Incidents −40%</span><span class="pcard-result-chip" data-fr="Logs +65%" data-en="Logs +65%">Logs +65%</span></div>
         <div class="pcard-stack"><span class="pcard-tag">FortiGate</span><span class="pcard-tag">Wazuh</span><span class="pcard-tag">Proxmox</span><span class="pcard-tag">Zabbix</span><span class="pcard-tag">Aruba L3</span></div>
-        <button class="pcard-btn">Voir détails <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="pcard-btn"><span data-fr="Voir détails" data-en="View details">Voir détails</span> <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
     </div>
 
@@ -1253,17 +1250,17 @@ body.light .term-text{color:var(--muted);}
       <div class="pcard-glow"></div>
       <div class="pcard-img-section">
         <img src="PFA-academique.jpg" class="pcard-img" alt="SD-WAN" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="pcard-img-placeholder" style="display:none">🔐</div>
+        <div class="pcard-img-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3.5v5.2c0 4.4-3 8.3-7 9.3-4-1-7-4.9-7-9.3V6.5L12 3z"/></svg></div>
         <div class="pcard-overlay"></div>
       </div>
       <div class="pcard-body">
-        <span class="pcard-badge acad">Académique · 2025</span>
+        <span class="pcard-badge acad" data-fr="Académique · 2025" data-en="Academic · 2025">Académique · 2025</span>
         <div class="pcard-meta"><span class="pcard-num">02</span></div>
-        <h3 class="pcard-title">Architecture SD-WAN Sécurisée — VPN IPSec Site-à-Site</h3>
-        <p class="pcard-desc">Déploiement SD-WAN FortiGate avec tunnels VPN IPSec redondants entre sites, failover automatique et supervision SLA en temps réel.</p>
-        <div class="pcard-results"><span class="pcard-result-chip">Failover automatique</span><span class="pcard-result-chip">SLA surveillé</span></div>
+        <h3 class="pcard-title" data-fr="Architecture SD-WAN Sécurisée — VPN IPSec Site-à-Site" data-en="Secure SD-WAN Architecture — Site-to-Site IPSec VPN">Architecture SD-WAN Sécurisée — VPN IPSec Site-à-Site</h3>
+        <p class="pcard-desc" data-fr="Déploiement SD-WAN FortiGate avec tunnels VPN IPSec redondants entre sites, failover automatique et supervision SLA en temps réel." data-en="FortiGate SD-WAN deployment with redundant IPSec VPN tunnels between sites, automatic failover and real-time SLA monitoring.">Déploiement SD-WAN FortiGate avec tunnels VPN IPSec redondants entre sites, failover automatique et supervision SLA en temps réel.</p>
+        <div class="pcard-results"><span class="pcard-result-chip" data-fr="Failover automatique" data-en="Automatic failover">Failover automatique</span><span class="pcard-result-chip" data-fr="SLA surveillé" data-en="SLA monitored">SLA surveillé</span></div>
         <div class="pcard-stack"><span class="pcard-tag">FortiGate</span><span class="pcard-tag">SD-WAN</span><span class="pcard-tag">VPN IPSec</span><span class="pcard-tag">GNS3</span></div>
-        <button class="pcard-btn">Voir détails <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="pcard-btn"><span data-fr="Voir détails" data-en="View details">Voir détails</span> <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
     </div>
 
@@ -1271,17 +1268,17 @@ body.light .term-text{color:var(--muted);}
       <div class="pcard-glow"></div>
       <div class="pcard-img-section">
         <img src="Topologie_MPLS.png" class="pcard-img" alt="MPLS" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="pcard-img-placeholder" style="display:none">🌐</div>
+        <div class="pcard-img-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></div>
         <div class="pcard-overlay"></div>
       </div>
       <div class="pcard-body">
-        <span class="pcard-badge acad">Académique · 2025</span>
+        <span class="pcard-badge acad" data-fr="Académique · 2025" data-en="Academic · 2025">Académique · 2025</span>
         <div class="pcard-meta"><span class="pcard-num">03</span></div>
-        <h3 class="pcard-title">Migration Réseau vers MPLS + QoS &amp; TE</h3>
-        <p class="pcard-desc">Migration IP classique → MPLS avec ingénierie de trafic RSVP-TE, DS-TE, politiques QoS et routage PBR pour opérateur multi-services.</p>
-        <div class="pcard-results"><span class="pcard-result-chip">Backbone validé</span><span class="pcard-result-chip">SLA respectés</span></div>
+        <h3 class="pcard-title" data-fr="Migration Réseau vers MPLS + QoS &amp; TE" data-en="Network Migration to MPLS + QoS &amp; TE">Migration Réseau vers MPLS + QoS &amp; TE</h3>
+        <p class="pcard-desc" data-fr="Migration IP classique → MPLS avec ingénierie de trafic RSVP-TE, DS-TE, politiques QoS et routage PBR pour opérateur multi-services." data-en="Migration from classic IP → MPLS with RSVP-TE / DS-TE traffic engineering, QoS policies and PBR routing for a multi-service operator.">Migration IP classique → MPLS avec ingénierie de trafic RSVP-TE, DS-TE, politiques QoS et routage PBR pour opérateur multi-services.</p>
+        <div class="pcard-results"><span class="pcard-result-chip" data-fr="Backbone validé" data-en="Backbone validated">Backbone validé</span><span class="pcard-result-chip" data-fr="SLA respectés" data-en="SLAs met">SLA respectés</span></div>
         <div class="pcard-stack"><span class="pcard-tag">MPLS</span><span class="pcard-tag">BGP</span><span class="pcard-tag">IS-IS</span><span class="pcard-tag">PBR</span></div>
-        <button class="pcard-btn">Voir détails <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="pcard-btn"><span data-fr="Voir détails" data-en="View details">Voir détails</span> <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
     </div>
 
@@ -1289,17 +1286,17 @@ body.light .term-text{color:var(--muted);}
       <div class="pcard-glow"></div>
       <div class="pcard-img-section">
         <img src="Projet1-Docker.png" class="pcard-img" alt="DevSecOps" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="pcard-img-placeholder" style="display:none">🐳</div>
+        <div class="pcard-img-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 12h8M12 8v8"/></svg></div>
         <div class="pcard-overlay"></div>
       </div>
       <div class="pcard-body">
-        <span class="pcard-badge sec">Cybersécurité · Déc. 2025</span>
+        <span class="pcard-badge sec" data-fr="Cybersécurité · Déc. 2025" data-en="Cybersecurity · Dec. 2025">Cybersécurité · Déc. 2025</span>
         <div class="pcard-meta"><span class="pcard-num">04</span></div>
-        <h3 class="pcard-title">DevSecOps — Docker, SBOM &amp; Signature SLSA L3</h3>
-        <p class="pcard-desc">Chaîne DevSecOps complète : SBOM (Syft), scan vulnérabilités (Grype), signature Cosign keyless et conformité SLSA Level 3.</p>
-        <div class="pcard-results"><span class="pcard-result-chip">SLSA L3 atteint</span><span class="pcard-result-chip">Supply chain sécurisée</span></div>
+        <h3 class="pcard-title" data-fr="DevSecOps — Docker, SBOM &amp; Signature SLSA L3" data-en="DevSecOps — Docker, SBOM &amp; SLSA L3 Signing">DevSecOps — Docker, SBOM &amp; Signature SLSA L3</h3>
+        <p class="pcard-desc" data-fr="Chaîne DevSecOps complète : SBOM (Syft), scan vulnérabilités (Grype), signature Cosign keyless et conformité SLSA Level 3." data-en="Full DevSecOps chain: SBOM (Syft), vulnerability scanning (Grype), keyless Cosign signing and SLSA Level 3 compliance.">Chaîne DevSecOps complète : SBOM (Syft), scan vulnérabilités (Grype), signature Cosign keyless et conformité SLSA Level 3.</p>
+        <div class="pcard-results"><span class="pcard-result-chip" data-fr="SLSA L3 atteint" data-en="SLSA L3 achieved">SLSA L3 atteint</span><span class="pcard-result-chip" data-fr="Supply chain sécurisée" data-en="Secured supply chain">Supply chain sécurisée</span></div>
         <div class="pcard-stack"><span class="pcard-tag">Docker</span><span class="pcard-tag">Syft</span><span class="pcard-tag">Grype</span><span class="pcard-tag">Cosign</span></div>
-        <button class="pcard-btn">Voir détails <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="pcard-btn"><span data-fr="Voir détails" data-en="View details">Voir détails</span> <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
     </div>
 
@@ -1307,17 +1304,17 @@ body.light .term-text{color:var(--muted);}
       <div class="pcard-glow"></div>
       <div class="pcard-img-section">
         <img src="Scanner1.jpg" class="pcard-img" alt="Scanner Java" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="pcard-img-placeholder" style="display:none">🔎</div>
+        <div class="pcard-img-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></div>
         <div class="pcard-overlay"></div>
       </div>
       <div class="pcard-body">
-        <span class="pcard-badge acad">Académique · 2025</span>
+        <span class="pcard-badge acad" data-fr="Académique · 2025" data-en="Academic · 2025">Académique · 2025</span>
         <div class="pcard-meta"><span class="pcard-num">05</span></div>
-        <h3 class="pcard-title">Scanner de Vulnérabilités Réseau (Java)</h3>
-        <p class="pcard-desc">Outil Java de scan de ports TCP avec association automatique aux CVE via base SQLite et génération de rapports de sécurité exploitables.</p>
-        <div class="pcard-results"><span class="pcard-result-chip">Ports détectés</span><span class="pcard-result-chip">CVE associées</span></div>
-        <div class="pcard-stack"><span class="pcard-tag">Java</span><span class="pcard-tag">SQLite</span><span class="pcard-tag">CVE DB</span><span class="pcard-tag">Swing</span></div>
-        <button class="pcard-btn">Voir détails <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <h3 class="pcard-title" data-fr="Scanner de Vulnérabilités Réseau (Java)" data-en="Network Vulnerability Scanner (Java)">Scanner de Vulnérabilités Réseau (Java)</h3>
+        <p class="pcard-desc" data-fr="Outil Java de scan de ports TCP avec association automatique aux CVE via base SQLite et génération de rapports de sécurité exploitables." data-en="Java TCP port scanning tool with automatic CVE matching via an SQLite database and actionable security report generation.">Outil Java de scan de ports TCP avec association automatique aux CVE via base SQLite et génération de rapports de sécurité exploitables.</p>
+        <div class="pcard-results"><span class="pcard-result-chip" data-fr="Ports détectés" data-en="Ports detected">Ports détectés</span><span class="pcard-result-chip" data-fr="CVE associées" data-en="CVEs matched">CVE associées</span></div>
+        <div class="pcard-stack"><span class="pcard-tag">Java</span><span class="pcard-tag">SQLite</span><span class="pcard-tag">CVE DB</span><span class="pcard-tag">Java Swing</span></div>
+        <button class="pcard-btn"><span data-fr="Voir détails" data-en="View details">Voir détails</span> <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
     </div>
 
@@ -1325,17 +1322,17 @@ body.light .term-text{color:var(--muted);}
       <div class="pcard-glow"></div>
       <div class="pcard-img-section">
         <img src="Metabolisme-station-base-1.png" class="pcard-img" alt="5G Station" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="pcard-img-placeholder" style="display:none">📡</div>
+        <div class="pcard-img-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 16 0M2 12h2M20 12h2M12 2v2M12 20v2"/><circle cx="12" cy="12" r="2"/></svg></div>
         <div class="pcard-overlay"></div>
       </div>
       <div class="pcard-body">
-        <span class="pcard-badge acad">Académique · Jan. 2026</span>
+        <span class="pcard-badge acad" data-fr="Académique · Jan. 2026" data-en="Academic · Jan. 2026">Académique · Jan. 2026</span>
         <div class="pcard-meta"><span class="pcard-num">06</span></div>
-        <h3 class="pcard-title">Étude Énergétique d'une Station de Base 5G</h3>
-        <p class="pcard-desc">Modélisation des flux énergie/signaux d'une BTS 5G (BBU/RRU) et simulation MATLAB Simulink dans une perspective de durabilité.</p>
-        <div class="pcard-results"><span class="pcard-result-chip">Modèle validé</span><span class="pcard-result-chip">Composants critiques</span></div>
+        <h3 class="pcard-title" data-fr="Étude Énergétique d'une Station de Base 5G" data-en="Energy Study of a 5G Base Station">Étude Énergétique d'une Station de Base 5G</h3>
+        <p class="pcard-desc" data-fr="Modélisation des flux énergie/signaux d'une BTS 5G (BBU/RRU) et simulation MATLAB Simulink dans une perspective de durabilité." data-en="Modeling of the energy/signal flows of a 5G BTS (BBU/RRU) with MATLAB Simulink simulation from a sustainability perspective.">Modélisation des flux énergie/signaux d'une BTS 5G (BBU/RRU) et simulation MATLAB Simulink dans une perspective de durabilité.</p>
+        <div class="pcard-results"><span class="pcard-result-chip" data-fr="Modèle validé" data-en="Model validated">Modèle validé</span><span class="pcard-result-chip" data-fr="Composants critiques" data-en="Critical components">Composants critiques</span></div>
         <div class="pcard-stack"><span class="pcard-tag">MATLAB Simulink</span><span class="pcard-tag">5G NR</span><span class="pcard-tag">BBU/RRU</span></div>
-        <button class="pcard-btn">Voir détails <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="pcard-btn"><span data-fr="Voir détails" data-en="View details">Voir détails</span> <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
     </div>
   </div>
@@ -1349,21 +1346,21 @@ body.light .term-text{color:var(--muted);}
 
   <div class="retour-grid">
     <div class="retour-card rv d1">
-      <span class="retour-num">01</span>
+      <span class="retour-num" data-fr="01" data-en="01">01</span>
       <div class="retour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></div>
       <div class="retour-title" data-fr="Le constat technique" data-en="The technical finding">Le constat technique</div>
       <div class="retour-desc" data-fr="Un audit réseau a révélé des failles concrètes : protocoles d'administration non sécurisés, accès distants non chiffrés, infrastructure vieillissante encore en production — des points d'entrée réels pour un attaquant opportuniste." data-en="A network audit revealed concrete flaws: unsecured administration protocols, unencrypted remote access, aging infrastructure still in production — real entry points for an opportunistic attacker.">Un audit réseau a révélé des failles concrètes : protocoles d'administration non sécurisés, accès distants non chiffrés, infrastructure vieillissante encore en production — des points d'entrée réels pour un attaquant opportuniste.</div>
     </div>
 
     <div class="retour-card rv d2">
-      <span class="retour-num">02</span>
+      <span class="retour-num" data-fr="02" data-en="02">02</span>
       <div class="retour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3.5v5.2c0 4.4-3 8.3-7 9.3-4-1-7-4.9-7-9.3V6.5L12 3z"/><path d="M9.5 12l2 2 3.5-4"/></svg></div>
       <div class="retour-title" data-fr="Un faux sentiment de sécurité" data-en="A false sense of security">Un faux sentiment de sécurité</div>
       <div class="retour-desc" data-fr="L'argument reçu : sans accès direct au réseau, pas de risque réel. Or la plupart des attaques ne ciblent personne en particulier — elles scannent Internet en continu à la recherche de la moindre faille exploitable, quelle que soit la taille de l'entreprise." data-en="The pushback I got: without direct network access, there's no real risk. But most attacks don't target anyone specifically — they continuously scan the internet for any exploitable flaw, regardless of company size.">L'argument reçu : sans accès direct au réseau, pas de risque réel. Or la plupart des attaques ne ciblent personne en particulier — elles scannent Internet en continu à la recherche de la moindre faille exploitable, quelle que soit la taille de l'entreprise.</div>
     </div>
 
     <div class="retour-card rv d3">
-      <span class="retour-num">03</span>
+      <span class="retour-num" data-fr="03" data-en="03">03</span>
       <div class="retour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"/><circle cx="12" cy="12" r="5"/></svg></div>
       <div class="retour-title" data-fr="Ce que j'en retiens" data-en="What I took away">Ce que j'en retiens</div>
       <div class="retour-desc" data-fr="Le vrai obstacle n'est pas technique mais économique : un investissement sécurité ne produit aucun résultat visible tant qu'aucun incident ne survient. Savoir traduire un risque en langage de coût pour un décideur non-technique est une compétence aussi rare que la compétence technique elle-même." data-en="The real obstacle isn't technical but economic: a security investment shows no visible result until an incident happens. Translating risk into cost language for a non-technical decision-maker is a skill as rare as the technical skill itself.">Le vrai obstacle n'est pas technique mais économique : un investissement sécurité ne produit aucun résultat visible tant qu'aucun incident ne survient. Savoir traduire un risque en langage de coût pour un décideur non-technique est une compétence aussi rare que la compétence technique elle-même.</div>
@@ -1376,12 +1373,12 @@ body.light .term-text{color:var(--muted);}
   <div class="contact-grid">
     <div>
       <h2 class="sec-title rv" data-fr="Travaillons<br><em>ensemble</em>" data-en="Let's work<br><em>together</em>">Travaillons<br><em>ensemble</em></h2>
-      <p class="c-desc rv" data-fr="Disponible pour un poste en ingénierie réseaux, télécoms ou sécurité des systèmes. Ouvert aux missions d'audit, de supervision et de déploiement d'infrastructures." data-en="Available for a role in networks, telecom or systems security engineering. Open to audit, monitoring and infrastructure deployment assignments.">Disponible pour un poste en ingénierie réseaux, télécoms ou sécurité des systèmes. Ouvert aux missions d'audit, de supervision et de déploiement d'infrastructures.</p>
+      <p class="c-desc rv" data-fr="Pour tout échange professionnel autour des réseaux, télécommunications et cybersécurité, n'hésitez pas à me contacter." data-en="For any professional inquiry about networks, telecommunications and cybersecurity, feel free to reach out.">Pour tout échange professionnel autour des réseaux, télécommunications et cybersécurité, n'hésitez pas à me contacter.</p>
       <div class="c-links rv d1">
-        <a href="CV HOUSSAMEDDINE MARCHOUAL.pdf" download class="c-link"><span class="c-ico">⬇</span><span data-fr="Télécharger mon CV (PDF)" data-en="Download my CV (PDF)">Télécharger mon CV (PDF)</span></a>
-        <a href="mailto:houssameddinemarchoual@gmail.com" class="c-link"><span class="c-ico">✉</span>houssameddinemarchoual@gmail.com</a>
-        <a href="https://www.linkedin.com/in/houssameddine-marchoual-b10ab0298/" target="_blank" class="c-link"><span class="c-ico">in</span><span data-fr="LinkedIn · Profil professionnel" data-en="LinkedIn · Professional profile">LinkedIn · Profil professionnel</span></a>
-        <div class="c-link"><span class="c-ico">📍</span><span data-fr="Casablanca, Maroc" data-en="Casablanca, Morocco">Casablanca, Maroc</span></div>
+        <a href="CV HOUSSAMEDDINE MARCHOUAL.pdf" download class="c-link"><span class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg></span><span data-fr="Télécharger mon CV (PDF)" data-en="Download my CV (PDF)">Télécharger mon CV (PDF)</span></a>
+        <a href="mailto:houssameddinemarchoual@gmail.com" class="c-link"><span class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>houssameddinemarchoual@gmail.com</a>
+        <a href="https://www.linkedin.com/in/houssameddine-marchoual-b10ab0298/" target="_blank" class="c-link"><span class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M11 17v-4.5a2.5 2.5 0 0 1 5 0V17"/></svg></span><span data-fr="LinkedIn · Profil professionnel" data-en="LinkedIn · Professional profile">LinkedIn · Profil professionnel</span></a>
+        <div class="c-link"><span class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12A7 7 0 0 0 5 10c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span data-fr="Casablanca, Maroc" data-en="Casablanca, Morocco">Casablanca, Maroc</span></div>
       </div>
     </div>
     <div class="rv d2">
@@ -1391,11 +1388,11 @@ body.light .term-text{color:var(--muted);}
     <input type="text" id="f-hp" name="company" tabindex="-1" autocomplete="off">
   </div>
         <div class="f-row">
-          <div class="f-field"><label data-fr="Nom complet" data-en="Full name">Nom complet</label><input type="text" id="f-name" placeholder="Votre nom" required minlength="2"></div>
-          <div class="f-field"><label data-fr="Email" data-en="Email">Email</label><input type="email" id="f-email" placeholder="votre@email.com" required></div>
+          <div class="f-field"><label data-fr="Nom complet" data-en="Full name">Nom complet</label><input type="text" id="f-name" required minlength="2"></div>
+          <div class="f-field"><label data-fr="Email" data-en="Email">Email</label><input type="email" id="f-email" required></div>
         </div>
-        <div class="f-field"><label data-fr="Objet" data-en="Subject">Objet</label><input type="text" id="f-subject" placeholder="Collaboration / recrutement / projet..."></div>
-        <div class="f-field"><label data-fr="Message" data-en="Message">Message</label><textarea rows="5" id="f-msg" placeholder="Décrivez votre besoin..." required minlength="10"></textarea></div>
+        <div class="f-field"><label data-fr="Objet" data-en="Subject">Objet</label><input type="text" id="f-subject"></div>
+        <div class="f-field"><label data-fr="Message" data-en="Message">Message</label><textarea rows="5" id="f-msg" required minlength="10"></textarea></div>
         <button type="submit" class="btn-main" id="f-btn" style="align-self:flex-start">
           <span id="f-btn-txt" data-fr="Envoyer le message" data-en="Send message">Envoyer le message</span>
           <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1415,10 +1412,10 @@ body.light .term-text{color:var(--muted);}
     </div>
     <div class="footer-ticker-wrap">
       <div class="footer-ticker">
-        <span class="footer-ticker-item">© 2026 Houssameddine MARCHOUAL <span class="sep">·</span> <span class="hi">ENSA Fès</span> <span class="sep">·</span> Réseaux &amp; Télécommunications <span class="sep">·</span> Casablanca, Maroc</span>
-        <span class="footer-ticker-item"><span class="hi">ISC² CC</span> <span class="sep">·</span> HCIA-5G <span class="sep">·</span> HCIA-Datacom <span class="sep">·</span> Network Engineer <span class="sep">·</span> <span class="hi">Disponible</span></span>
-        <span class="footer-ticker-item">© 2026 Houssameddine MARCHOUAL <span class="sep">·</span> <span class="hi">ENSA Fès</span> <span class="sep">·</span> Réseaux &amp; Télécommunications <span class="sep">·</span> Casablanca, Maroc</span>
-        <span class="footer-ticker-item"><span class="hi">ISC² CC</span> <span class="sep">·</span> HCIA-5G <span class="sep">·</span> HCIA-Datacom <span class="sep">·</span> Network Engineer <span class="sep">·</span> <span class="hi">Disponible</span></span>
+        <span class="footer-ticker-item">© 2026 Houssameddine MARCHOUAL <span class="sep">·</span> <span class="hi">ENSA Fès</span> <span class="sep">·</span> <span data-fr="Réseaux &amp; Télécommunications" data-en="Networks &amp; Telecommunications">Réseaux &amp; Télécommunications</span> <span class="sep">·</span> <span data-fr="Casablanca, Maroc" data-en="Casablanca, Morocco">Casablanca, Maroc</span></span>
+        <span class="footer-ticker-item"><span class="hi">ISC² CC</span> <span class="sep">·</span> HCIA-5G <span class="sep">·</span> HCIA-Datacom <span class="sep">·</span> <span data-fr="Ingénieur Réseaux" data-en="Network Engineer">Ingénieur Réseaux</span> <span class="sep">·</span> <span class="hi" data-fr="Disponible" data-en="Available">Disponible</span></span>
+        <span class="footer-ticker-item">© 2026 Houssameddine MARCHOUAL <span class="sep">·</span> <span class="hi">ENSA Fès</span> <span class="sep">·</span> <span data-fr="Réseaux &amp; Télécommunications" data-en="Networks &amp; Telecommunications">Réseaux &amp; Télécommunications</span> <span class="sep">·</span> <span data-fr="Casablanca, Maroc" data-en="Casablanca, Morocco">Casablanca, Maroc</span></span>
+        <span class="footer-ticker-item"><span class="hi">ISC² CC</span> <span class="sep">·</span> HCIA-5G <span class="sep">·</span> HCIA-Datacom <span class="sep">·</span> <span data-fr="Ingénieur Réseaux" data-en="Network Engineer">Ingénieur Réseaux</span> <span class="sep">·</span> <span class="hi" data-fr="Disponible" data-en="Available">Disponible</span></span>
       </div>
     </div>
     <a href="#home" class="footer-top">
