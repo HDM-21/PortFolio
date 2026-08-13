@@ -38,7 +38,7 @@ html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:'Sora',sans-serif;overflow-x:hidden;cursor:none;}
 :root{
   --bg:#030709;--bg2:rgba(255,255,255,.012);
-  --text:#eaf4f0;--muted:rgba(234,244,240,.62);--muted2:rgba(234,244,240,.32);
+  --text:#eaf4f0;--muted:rgba(173,214,201,.7);--muted2:rgba(173,214,201,.38);
   --accent:#00c8ff;--accent2:#00ff99;
   --card:#030709;--border:rgba(0,255,153,.1);--border2:rgba(255,255,255,.06);
   --radius:12px;
@@ -48,43 +48,43 @@ body{background:var(--bg);color:var(--text);font-family:'Sora',sans-serif;overfl
 }
 
 /* ═══ LIGHT MODE ═══ */
-body.light{--bg:#f0f4f8;--bg2:#ffffff;--text:#1a2535;--muted:rgba(26,37,53,.72);--muted2:rgba(26,37,53,.45);--accent:#6366f1;--accent2:#8b5cf6;--card:#ffffff;--border:rgba(99,102,241,.15);--border2:rgba(0,0,0,.07);}
+body.light{--bg:#f0f4f8;--bg2:#ffffff;--text:#1a2535;--muted:rgba(41,63,92,.76);--muted2:rgba(41,63,92,.48);--accent:#2563eb;--accent2:#0d9488;--card:#ffffff;--border:rgba(37,99,235,.15);--border2:rgba(0,0,0,.07);}
 body.light #bg-canvas{filter:saturate(0.3) brightness(1.2);}
 body.light .scanlines{opacity:.04;}
-body.light .nav.scrolled{background:rgba(240,244,248,.92);border-bottom:1px solid rgba(99,102,241,.12);}
+body.light .nav.scrolled{background:rgba(240,244,248,.92);border-bottom:1px solid rgba(37,99,235,.12);}
 body.light .nav-link{color:rgba(26,37,53,.55);}
-body.light .nav-link:hover{color:var(--text);background:rgba(99,102,241,.07);}
+body.light .nav-link:hover{color:var(--text);background:rgba(37,99,235,.07);}
 body.light .nav-link.active{color:var(--accent2);}
-body.light .theme-btn,.light .lang-btn{background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.2);color:var(--text);}
-body.light .theme-btn:hover,.light .lang-btn:hover{border-color:rgba(99,102,241,.5);box-shadow:0 0 16px rgba(99,102,241,.2);}
-body.light .eyebrow{color:rgba(99,102,241,.8);}
+body.light .theme-btn,.light .lang-btn{background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.2);color:var(--text);}
+body.light .theme-btn:hover,.light .lang-btn:hover{border-color:rgba(37,99,235,.5);box-shadow:0 0 16px rgba(37,99,235,.2);}
+body.light .eyebrow{color:rgba(37,99,235,.8);}
 body.light .live-dot{background:var(--accent2);box-shadow:0 0 8px var(--accent2);}
 body.light .hero-role span{color:var(--accent);}
 body.light .btn-ghost{border-color:rgba(26,37,53,.18);}
-body.light .btn-ghost:hover{border-color:rgba(139,92,246,.5);color:var(--accent2);background:rgba(139,92,246,.06);}
+body.light .btn-ghost:hover{border-color:rgba(13,148,136,.5);color:var(--accent2);background:rgba(13,148,136,.06);}
 body.light .stat-sep{background:rgba(26,37,53,.1);}
-body.light .hero-badge{background:rgba(255,255,255,.95);border:1px solid rgba(99,102,241,.18);}
-body.light .badge-header{color:rgba(99,102,241,.75);}
+body.light .hero-badge{background:rgba(255,255,255,.95);border:1px solid rgba(37,99,235,.18);}
+body.light .badge-header{color:rgba(37,99,235,.75);}
 body.light .badge-header::before{background:var(--accent2);box-shadow:0 0 6px var(--accent2);}
 body.light .badge-row{border-bottom:1px solid rgba(26,37,53,.07);}
-body.light .sec-label{color:rgba(99,102,241,.75);}
-body.light .sec-label::after{background:rgba(99,102,241,.25);}
-body.light .meta-grid{background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.1);}
-body.light .meta-cell:hover{background:rgba(99,102,241,.06);}
-body.light .school-card{background:rgba(255,255,255,.95);border:1px solid rgba(99,102,241,.12);}
-body.light .school-card:hover{border-color:rgba(99,102,241,.4);}
+body.light .sec-label{color:rgba(37,99,235,.75);}
+body.light .sec-label::after{background:rgba(37,99,235,.25);}
+body.light .meta-grid{background:rgba(37,99,235,.06);border:1px solid rgba(37,99,235,.1);}
+body.light .meta-cell:hover{background:rgba(37,99,235,.06);}
+body.light .school-card{background:rgba(255,255,255,.95);border:1px solid rgba(37,99,235,.12);}
+body.light .school-card:hover{border-color:rgba(37,99,235,.4);}
 body.light .school-img-overlay{background:linear-gradient(to top,rgba(240,244,248,.9) 0%,transparent 60%);}
 body.light .school-img-label{color:var(--accent2);}
 body.light .int-item{color:rgba(26,37,53,.6);border-bottom:1px solid rgba(26,37,53,.07);}
 body.light .int-title::before{color:var(--accent2);}
 body.light .sk-tab{border:1px solid rgba(26,37,53,.1);color:rgba(26,37,53,.5);}
-body.light .sk-tab.on{background:rgba(99,102,241,.09);border-color:rgba(99,102,241,.25);color:var(--accent2);}
-body.light .sk-panels{border:1px solid rgba(99,102,241,.12);background:rgba(255,255,255,.95);}
-body.light .sk-item:hover{background:rgba(99,102,241,.06);}
-body.light .sk-lvl.e{background:rgba(139,92,246,.1);color:var(--accent2);border:1px solid rgba(139,92,246,.2);}
-body.light .sk-lvl.a{background:rgba(99,102,241,.09);color:var(--accent);border:1px solid rgba(99,102,241,.18);}
-body.light .terminal{background:rgba(255,255,255,.95);border:1px solid rgba(99,102,241,.12);}
-body.light .term-bar{background:rgba(99,102,241,.06);border-bottom:1px solid rgba(99,102,241,.1);}
+body.light .sk-tab.on{background:rgba(37,99,235,.09);border-color:rgba(37,99,235,.25);color:var(--accent2);}
+body.light .sk-panels{border:1px solid rgba(37,99,235,.12);background:rgba(255,255,255,.95);}
+body.light .sk-item:hover{background:rgba(37,99,235,.06);}
+body.light .sk-lvl.e{background:rgba(13,148,136,.1);color:var(--accent2);border:1px solid rgba(13,148,136,.2);}
+body.light .sk-lvl.a{background:rgba(37,99,235,.09);color:var(--accent);border:1px solid rgba(37,99,235,.18);}
+body.light .terminal{background:rgba(255,255,255,.95);border:1px solid rgba(37,99,235,.12);}
+body.light .term-bar{background:rgba(37,99,235,.06);border-bottom:1px solid rgba(37,99,235,.1);}
 body.light .term-prompt{color:var(--accent2);}
 body.light .term-text .ok{color:var(--accent2);}
 body.light .tl-dot-exp{border:2px solid var(--accent2);background:var(--bg);}
@@ -92,14 +92,14 @@ body.light .tl-logo{border:1px solid rgba(26,37,53,.12);background:rgba(255,255,
 body.light .tl-tag{border:1px solid rgba(255,176,32,.25);background:rgba(255,176,32,.06);color:#b5780f;}
 body.light .tl-tag:hover{border-color:rgba(255,176,32,.5);color:#b5780f;}
 body.light .stage-img{border:1px solid rgba(26,37,53,.1);}
-body.light .cert-grid{background:rgba(99,102,241,.045);border:1px solid rgba(99,102,241,.1);}
-body.light .cert-card:hover{background:rgba(99,102,241,.05);}
+body.light .cert-grid{background:rgba(37,99,235,.045);border:1px solid rgba(37,99,235,.1);}
+body.light .cert-card:hover{background:rgba(37,99,235,.05);}
 body.light .cert-img{border:1px solid rgba(26,37,53,.1);}
 body.light .c-link{border:1px solid rgba(26,37,53,.1);background:rgba(26,37,53,.025);}
-body.light .c-link:hover{border-color:rgba(99,102,241,.3);background:rgba(99,102,241,.06);}
-body.light .c-ico{background:rgba(99,102,241,.09);border:1px solid rgba(99,102,241,.2);color:var(--accent2);}
+body.light .c-link:hover{border-color:rgba(37,99,235,.3);background:rgba(37,99,235,.06);}
+body.light .c-ico{background:rgba(37,99,235,.09);border:1px solid rgba(37,99,235,.2);color:var(--accent2);}
 body.light .f-field input,.light .f-field textarea{border:1px solid rgba(26,37,53,.12);background:rgba(26,37,53,.025);}
-body.light .f-field input:focus,body.light .f-field textarea:focus{border-color:rgba(99,102,241,.4);background:rgba(99,102,241,.05);}
+body.light .f-field input:focus,body.light .f-field textarea:focus{border-color:rgba(37,99,235,.4);background:rgba(37,99,235,.05);}
 body.light .footer{border-top:1px solid rgba(26,37,53,.1);}
 
 /* ═══ CURSOR ═══ */
@@ -143,7 +143,7 @@ body.light #cur-dot{background:var(--accent2);}
 .badge-row{display:flex;justify-content:space-between;align-items:center;font-size:13px;padding:7px 0;border-bottom:1px solid rgba(234,244,240,.055);}
 .badge-row:last-child{border:none;}
 .badge-key{color:var(--muted2);font-family:var(--font-mono);font-size:10px;}
-.badge-val{color:var(--text);font-weight:700;font-size:13px;}
+.badge-val{color:var(--text);font-weight:700;font-size:13px;overflow-wrap:anywhere;text-align:right;}
 .badge-val.g{color:var(--accent2);}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:11px;color:rgba(0,255,153,.68);letter-spacing:.14em;text-transform:uppercase;margin-bottom:26px;opacity:0;animation:fadeUp .7s .2s forwards;}
 .live-dot{width:6px;height:6px;border-radius:50%;background:var(--accent2);box-shadow:0 0 8px var(--accent2);animation:blink 1.8s infinite;}
@@ -153,7 +153,7 @@ body.light #cur-dot{background:var(--accent2);}
 .hero-name .part2{display:block;position:relative;min-height:1em;}
 .letter-char{display:inline-block;position:relative;cursor:default;transform-origin:center center;will-change:transform,opacity;backface-visibility:hidden;}
 .part1 .letter-char{color:var(--text);opacity:1;}
-.part2 .letter-char{background:linear-gradient(130deg,var(--accent2) 0%,var(--accent) 55%,#7c3aed 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:1;}
+.part2 .letter-char{background:linear-gradient(130deg,var(--accent2) 0%,var(--accent) 55%,#0891b2 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:1;}
 .part2 .letter-char.space{width:.25em;}
 @keyframes letterDrop{0%{opacity:0;transform:translateY(-55px) rotateX(-80deg) scale(1.3);}55%{opacity:1;transform:translateY(6px) rotateX(8deg) scale(.97);}78%{transform:translateY(-3px) rotateX(-4deg) scale(1.01);}100%{opacity:1;transform:translateY(0) rotateX(0) scale(1);}}
 @keyframes letterRise{0%{opacity:0;transform:translateY(55px) rotateX(80deg) scale(.65);}55%{opacity:1;transform:translateY(-8px) rotateX(-10deg) scale(1.03);}78%{transform:translateY(3px) rotateX(5deg) scale(.985);}100%{opacity:1;transform:translateY(0) rotateX(0) scale(1);}}
@@ -166,7 +166,7 @@ body.light #cur-dot{background:var(--accent2);}
 .hero-desc{max-width:560px;font-size:17px;line-height:1.85;color:var(--muted);margin-bottom:36px;opacity:0;animation:fadeUp .7s .7s forwards;font-weight:400;word-break:normal;overflow-wrap:break-word;}
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px;opacity:0;animation:fadeUp .7s .85s forwards;}
 .btn-main{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;background:linear-gradient(130deg,var(--accent2),var(--accent));color:#030709;font-family:var(--font-title);font-size:14px;font-weight:700;border:none;border-radius:8px;text-decoration:none;cursor:pointer;transition:all .22s;letter-spacing:.01em;position:relative;overflow:hidden;}
-.btn-main::before{content:'';position:absolute;inset:0;background:linear-gradient(130deg,var(--accent),#7c3aed);opacity:0;transition:opacity .22s;}
+.btn-main::before{content:'';position:absolute;inset:0;background:linear-gradient(130deg,var(--accent),#0891b2);opacity:0;transition:opacity .22s;}
 .btn-main:hover::before{opacity:1;}
 .btn-main span,.btn-main svg{position:relative;z-index:1;}
 .btn-main svg{width:14px;}
@@ -249,6 +249,7 @@ body.light #cur-dot{background:var(--accent2);}
 .term-text .str{color:#ff9f43;}
 .term-text .cmt{color:var(--muted2);}
 .term-text .ok{color:var(--accent2);}
+.term-text .lvl{color:#ffb020;font-weight:600;}
 .term-caret{display:inline-block;width:7px;height:1em;background:var(--accent2);vertical-align:text-bottom;animation:blink 1s infinite;margin-left:2px;}
 
 /* ═══ TIMELINE ═══ */
@@ -318,7 +319,7 @@ body.light #cur-dot{background:var(--accent2);}
   flex-direction:column;
 }
 .pcard:hover{transform:translateY(-12px) scale(1.02);border-color:rgba(0,255,170,.25);box-shadow:0 22px 55px rgba(0,255,170,.14),0 0 0 1px rgba(0,255,170,.12);}
-.pcard::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#00ff99,#00d0ff,#7c3aed);transform:scaleX(0);transform-origin:left;transition:transform .45s ease;z-index:3;}
+.pcard::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#00ff99,#00d0ff,#0891b2);transform:scaleX(0);transform-origin:left;transition:transform .45s ease;z-index:3;}
 .pcard:hover::before{transform:scaleX(1);}
 
 /* FIX: Image section stays fixed height */
@@ -408,7 +409,7 @@ body.light .proj-modal-overlay{background:#f0f4f8;}
   scrollbar-width:thin;
   scrollbar-color:rgba(0,255,153,.25) transparent;
 }
-body.light .proj-modal-scroll{scrollbar-color:rgba(99,102,241,.25) transparent;}
+body.light .proj-modal-scroll{scrollbar-color:rgba(37,99,235,.25) transparent;}
 
 .proj-modal-progress{
   position:fixed;top:0;left:0;right:0;height:2px;z-index:8100;
@@ -431,7 +432,7 @@ body.light .proj-modal-scroll{scrollbar-color:rgba(99,102,241,.25) transparent;}
   transition:.25s;
   backdrop-filter:blur(12px);
 }
-body.light .proj-modal-close-btn{background:rgba(255,255,255,.8);border-color:rgba(99,102,241,.2);}
+body.light .proj-modal-close-btn{background:rgba(255,255,255,.8);border-color:rgba(37,99,235,.2);}
 .proj-modal-close-btn:hover{color:var(--text);border-color:var(--accent2);background:rgba(0,255,153,.07);}
 
 .proj-modal-inner{
@@ -452,7 +453,7 @@ body.light .proj-modal-close-btn{background:rgba(255,255,255,.8);border-color:rg
   margin-bottom:40px;
   display:block;
 }
-body.light .proj-fs-hero-img{border-color:rgba(99,102,241,.15);}
+body.light .proj-fs-hero-img{border-color:rgba(37,99,235,.15);}
 
 .proj-fs-badge{
   display:inline-flex;align-items:center;gap:8px;
@@ -488,14 +489,14 @@ body.light .proj-fs-label::after{background:var(--accent);}
   display:flex;align-items:center;justify-content:center;
   font-size:10px;font-weight:700;color:var(--accent2);flex-shrink:0;
 }
-body.light .proj-fs-label .proj-step-num{background:rgba(99,102,241,.09);border-color:rgba(99,102,241,.3);color:var(--accent);}
+body.light .proj-fs-label .proj-step-num{background:rgba(37,99,235,.09);border-color:rgba(37,99,235,.3);color:var(--accent);}
 .proj-fs-content{
   background:rgba(255,255,255,.025);
   border:1px solid rgba(255,255,255,.07);
   border-radius:14px;padding:26px 30px;
   font-size:15.5px;line-height:1.9;color:var(--muted);
 }
-body.light .proj-fs-content{background:rgba(255,255,255,.8);border-color:rgba(99,102,241,.1);}
+body.light .proj-fs-content{background:rgba(255,255,255,.8);border-color:rgba(37,99,235,.1);}
 .proj-fs-content strong{color:var(--text);font-weight:700;}
 .proj-fs-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
 .proj-fs-chip{
@@ -504,19 +505,19 @@ body.light .proj-fs-content{background:rgba(255,255,255,.8);border-color:rgba(99
   background:rgba(0,255,153,.07);border:1px solid rgba(0,255,153,.18);
   font-size:13px;font-weight:600;color:var(--accent2);
 }
-body.light .proj-fs-chip{background:rgba(99,102,241,.07);border-color:rgba(99,102,241,.2);color:var(--accent);}
+body.light .proj-fs-chip{background:rgba(37,99,235,.07);border-color:rgba(37,99,235,.2);color:var(--accent);}
 .proj-fs-chip::before{content:'✓';font-size:11px;}
 .proj-fs-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(0,255,153,.15),transparent);margin:40px 0;}
-body.light .proj-fs-divider{background:linear-gradient(90deg,transparent,rgba(99,102,241,.15),transparent);}
+body.light .proj-fs-divider{background:linear-gradient(90deg,transparent,rgba(37,99,235,.15),transparent);}
 .proj-fs-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:4px;}
 .proj-fs-list li{padding-left:20px;position:relative;font-size:15px;line-height:1.75;color:var(--muted);}
 .proj-fs-list li::before{content:'›';position:absolute;left:0;color:var(--accent2);font-size:14px;}
 .proj-fs-list li strong{color:var(--text);}
 .proj-fs-content code{font-family:var(--font-mono);font-size:12.5px;background:rgba(0,255,153,.08);border:1px solid rgba(0,255,153,.15);padding:2px 8px;border-radius:5px;color:var(--accent2);}
-body.light .proj-fs-content code{background:rgba(99,102,241,.08);border-color:rgba(99,102,241,.2);color:var(--accent2);}
+body.light .proj-fs-content code{background:rgba(37,99,235,.08);border-color:rgba(37,99,235,.2);color:var(--accent2);}
 .proj-fs-stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}
 .proj-fs-tag{font-size:11px;padding:5px 13px;border-radius:100px;background:rgba(0,255,153,.06);color:var(--accent2);border:1px solid rgba(0,255,153,.15);font-family:var(--font-mono);}
-body.light .proj-fs-tag{background:rgba(99,102,241,.07);color:var(--accent);border-color:rgba(99,102,241,.2);}
+body.light .proj-fs-tag{background:rgba(37,99,235,.07);color:var(--accent);border-color:rgba(37,99,235,.2);}
 
 /* ═══ LIGHTBOX ═══ */
 #lightbox{position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,.93);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(10px);}
@@ -532,12 +533,12 @@ body.light .proj-fs-tag{background:rgba(99,102,241,.07);color:var(--accent);bord
 .retour-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
 @media(max-width:900px){.retour-grid{grid-template-columns:1fr;}}
 .retour-card{background:rgba(0,10,5,.35);border:1px solid rgba(0,255,153,.1);border-radius:14px;padding:28px 26px;transition:border-color .25s,transform .25s;}
-body.light .retour-card{background:rgba(255,255,255,.9);border-color:rgba(99,102,241,.12);}
+body.light .retour-card{background:rgba(255,255,255,.9);border-color:rgba(37,99,235,.12);}
 .retour-card:hover{border-color:rgba(0,255,153,.28);transform:translateY(-4px);}
-body.light .retour-card:hover{border-color:rgba(99,102,241,.32);}
+body.light .retour-card:hover{border-color:rgba(37,99,235,.32);}
 .retour-num{font-family:var(--font-mono);font-size:10px;color:var(--accent2);letter-spacing:.14em;margin-bottom:16px;display:block;}
 .retour-ico{width:42px;height:42px;border-radius:11px;background:rgba(0,255,153,.08);border:1px solid rgba(0,255,153,.16);display:flex;align-items:center;justify-content:center;margin-bottom:18px;color:var(--accent2);}
-body.light .retour-ico{background:rgba(99,102,241,.08);border-color:rgba(99,102,241,.18);color:var(--accent);}
+body.light .retour-ico{background:rgba(37,99,235,.08);border-color:rgba(37,99,235,.18);color:var(--accent);}
 .retour-ico svg{width:20px;height:20px;}
 .retour-title{font-family:var(--font-title);font-size:16.5px;font-weight:700;color:var(--text);margin-bottom:12px;line-height:1.35;}
 .retour-desc{font-size:14px;color:var(--muted);line-height:1.75;}
@@ -590,9 +591,10 @@ body.light .footer-bottom{color:rgba(26,37,53,.22);}
 }
 @media(max-width:1180px){
   .nav,.nav.scrolled{padding-left:24px;padding-right:24px;}
-  .nav-links{display:none;flex-direction:column;position:fixed;top:0;right:0;bottom:0;width:240px;background:var(--bg);border-left:1px solid var(--border);padding:68px 18px 26px;z-index:490;transform:translateX(100%);transition:transform .3s;gap:3px;}
+  .nav-links{display:none;flex-direction:column;position:fixed;top:0;right:0;bottom:0;width:min(78vw,280px);background:var(--bg);border-left:1px solid var(--border);padding:68px 20px 26px;z-index:490;transform:translateX(100%);transition:transform .3s;gap:4px;}
   .nav-links.open{display:flex;transform:translateX(0);}
-  .nav-link{font-size:12.5px;border-radius:7px;}
+  .nav-link{font-size:12.5px;border-radius:7px;align-items:flex-start;gap:10px;padding:10px 12px;line-height:1.5;}
+  .nav-link .nn{flex-shrink:0;width:16px;padding-top:1px;}
   .nav-ham{display:flex;}
   .hero{grid-template-columns:1fr;padding:116px 24px 76px;}
   .about-grid{grid-template-columns:1fr;gap:38px;}
@@ -620,7 +622,8 @@ body.light .footer-bottom{color:rgba(26,37,53,.22);}
   .stat-lbl{font-size:9px;}
   .sec-title{font-size:clamp(1.6rem,7vw,2.2rem);}
   .cert-grid{grid-template-columns:1fr;}
-  .badge-row{font-size:12px;}
+  .badge-row{font-size:12px;flex-direction:column;align-items:flex-start;gap:2px;padding:9px 0;}
+  .badge-val{white-space:normal;overflow-wrap:break-word;word-break:break-word;text-align:left;}
   .hero-badge{max-width:100%;}
   .meta-grid{grid-template-columns:1fr;}
   .stage-img-grid{grid-template-columns:repeat(2,1fr);gap:5px;}
@@ -648,6 +651,12 @@ body.light .footer-bottom{color:rgba(26,37,53,.22);}
   .hero-name{font-size:clamp(1.8rem,10vw,2.4rem)!important;}
   .stat-val{font-size:1.4rem!important;}
   .sec-title{font-size:clamp(1.4rem,8vw,1.8rem)!important;}
+}
+@media(max-width:480px){
+  .term-body{font-size:11.5px;padding:15px 14px;}
+}
+@media(max-width:360px){
+  .term-body{font-size:10.5px;}
 }
   /* ═══ FIX MOBILE — CURSEUR + BADGE ═══ */
 @media (hover: none), (pointer: coarse){
@@ -707,7 +716,7 @@ body{cursor:auto!important;}
     box-shadow:0 0 0 4px rgba(0,255,153,.08);
     z-index:1;
   }
-  body.light .tl-item::before{box-shadow:0 0 0 4px rgba(99,102,241,.08);}
+  body.light .tl-item::before{box-shadow:0 0 0 4px rgba(37,99,235,.08);}
   .tl-spine{display:none;}
   .tl-left{
     display:flex;
@@ -840,7 +849,7 @@ body{cursor:auto!important;}
           <filter id="blur-sm"><feGaussianBlur stdDeviation="2"/></filter>
           <radialGradient id="grd1" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#00ff99" stop-opacity=".22"/><stop offset="100%" stop-color="#00ff99" stop-opacity="0"/></radialGradient>
           <radialGradient id="grd2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#00c8ff" stop-opacity=".18"/><stop offset="100%" stop-color="#00c8ff" stop-opacity="0"/></radialGradient>
-          <radialGradient id="grd-purple" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#7c3aed" stop-opacity=".12"/><stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/></radialGradient>
+          <radialGradient id="grd-purple" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#0891b2" stop-opacity=".12"/><stop offset="100%" stop-color="#0891b2" stop-opacity="0"/></radialGradient>
           <linearGradient id="screengrd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0a1f0e"/><stop offset="100%" stop-color="#050d08"/></linearGradient>
           <linearGradient id="linkg" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#00ff99" stop-opacity=".9"/><stop offset="100%" stop-color="#00c8ff" stop-opacity=".5"/></linearGradient>
           <style>
@@ -994,13 +1003,13 @@ body{cursor:auto!important;}
 
 <!-- ═══ ABOUT ═══ -->
 <section class="sec alt" id="about">
-  <div class="sec-label rv"><span class="num">01</span><span>Profil</span></div>
+  <div class="sec-label rv"><span class="num">01</span><span data-fr="Profil" data-en="Profile">Profil</span></div>
   <div class="about-grid">
     <div>
-      <h2 class="sec-title rv">À <em>propos</em></h2>
-      <p class="about-para rv">Ingénieur d'État en Réseaux &amp; Télécommunications, diplômé de l'<strong>ENSA Fès</strong> (2021–2026), avec des compétences en architecture réseau, sécurité des systèmes et supervision d'infrastructures.</p>
-      <p class="about-para rv d1">Expériences professionnelles réalisées chez <strong>Synapsis-KS-Morocco</strong> (audit &amp; sécurisation réseau), <strong>Huawei Technologies Morocco</strong> (déploiement 5G) et <strong>Marsa Maroc</strong> (supervision Zabbix/PRTG &amp; Cisco).</p>
-      <p class="about-para rv d2">Certifié ISC² CC, HCIA-5G, HCIA Datacom et HCIA Access. Objectif : intégrer une équipe réseaux / télécoms sur des projets d'infrastructure à fort impact technique.</p>
+      <h2 class="sec-title rv" data-fr="À <em>propos</em>" data-en="<em>About</em> me">À <em>propos</em></h2>
+      <p class="about-para rv" data-fr="Ingénieur d'État en Réseaux &amp; Télécommunications, diplômé de l'<strong>ENSA Fès</strong> (2021–2026), avec des compétences en architecture réseau, sécurité des systèmes et supervision d'infrastructures." data-en="State Engineer in Networks &amp; Telecommunications, graduated from <strong>ENSA Fès</strong> (2021–2026), with skills in network architecture, systems security and infrastructure monitoring.">Ingénieur d'État en Réseaux &amp; Télécommunications, diplômé de l'<strong>ENSA Fès</strong> (2021–2026), avec des compétences en architecture réseau, sécurité des systèmes et supervision d'infrastructures.</p>
+      <p class="about-para rv d1" data-fr="Expériences professionnelles réalisées chez <strong>Synapsis-KS-Morocco</strong> (audit &amp; sécurisation réseau), <strong>Huawei Technologies Morocco</strong> (déploiement 5G) et <strong>Marsa Maroc</strong> (supervision Zabbix/PRTG &amp; Cisco)." data-en="Professional experience gained at <strong>Synapsis-KS-Morocco</strong> (network audit &amp; security), <strong>Huawei Technologies Morocco</strong> (5G deployment) and <strong>Marsa Maroc</strong> (Zabbix/PRTG &amp; Cisco monitoring).">Expériences professionnelles réalisées chez <strong>Synapsis-KS-Morocco</strong> (audit &amp; sécurisation réseau), <strong>Huawei Technologies Morocco</strong> (déploiement 5G) et <strong>Marsa Maroc</strong> (supervision Zabbix/PRTG &amp; Cisco).</p>
+      <p class="about-para rv d2" data-fr="Certifié ISC² CC, HCIA-5G, HCIA Datacom et HCIA Access. Objectif : intégrer une équipe réseaux / télécoms sur des projets d'infrastructure à fort impact technique." data-en="Certified ISC² CC, HCIA-5G, HCIA Datacom and HCIA Access. Goal: join a networks / telecom team working on high-impact infrastructure projects.">Certifié ISC² CC, HCIA-5G, HCIA Datacom et HCIA Access. Objectif : intégrer une équipe réseaux / télécoms sur des projets d'infrastructure à fort impact technique.</p>
       <div class="meta-grid rv d3">
         <div class="meta-cell"><div class="meta-k">Localisation</div><div class="meta-v">Casablanca, Maroc</div></div>
         <div class="meta-cell"><div class="meta-k">Formation</div><div class="meta-v">ENSA Fès · Ingénieur d'État</div></div>
@@ -1033,16 +1042,16 @@ body{cursor:auto!important;}
 
 <!-- ═══ SKILLS ═══ -->
 <section class="sec" id="skills">
-  <div class="sec-label rv"><span class="num">02</span><span>Compétences</span></div>
-  <h2 class="sec-title rv">Stack <em>technique</em></h2>
+  <div class="sec-label rv"><span class="num">02</span><span data-fr="Compétences" data-en="Skills">Compétences</span></div>
+  <h2 class="sec-title rv" data-fr="Stack <em>technique</em>" data-en="Technical <em>stack</em>">Stack <em>technique</em></h2>
   <div class="terminal rv d1">
     <div class="term-bar"><div class="term-dot"></div><div class="term-dot"></div><div class="term-dot"></div><span class="term-title">skills.sh</span></div>
     <div class="term-body">
       <div class="term-line"><span class="term-prompt">$</span><span class="term-text"><span class="kw">scan</span> <span class="str">"Houssameddine.MARCHOUAL"</span> <span class="cmt">--deep</span></span></div>
-      <div class="term-line"><span class="term-prompt">›</span><span class="term-text"><span class="ok">✓</span> TCP/IP, VLANs, Routage OSPF/BGP — Avancé</span></div>
-      <div class="term-line"><span class="term-prompt">›</span><span class="term-text"><span class="ok">✓</span> FortiGate, VPN IPsec, Wazuh SIEM — Avancé</span></div>
-      <div class="term-line"><span class="term-prompt">›</span><span class="term-text"><span class="ok">✓</span> Supervision : Zabbix, PRTG, Centreon — Avancé</span></div>
-      <div class="term-line"><span class="term-prompt">›</span><span class="term-text"><span class="ok">✓</span> Linux, Proxmox VE, Windows Server — Avancé</span></div>
+      <div class="term-line"><span class="term-prompt">›</span><span class="term-text"><span class="ok">✓</span> TCP/IP, Routage OSPF/BGP — <span class="lvl">Avancé</span></span></div>
+      <div class="term-line"><span class="term-prompt">›</span><span class="term-text"><span class="ok">✓</span> Firewall NGFW, SIEM — <span class="lvl">Avancé</span></span></div>
+      <div class="term-line"><span class="term-prompt">›</span><span class="term-text"><span class="ok">✓</span> Supervision : Zabbix, SolarWinds — <span class="lvl">Avancé</span></span></div>
+      <div class="term-line"><span class="term-prompt">›</span><span class="term-text"><span class="ok">✓</span> Linux, Windows Server — <span class="lvl">Avancé</span></span></div>
       <div class="term-line"><span class="term-prompt">$</span><span class="term-text"><span class="kw">status</span> <span class="ok">READY</span><span class="term-caret"></span></span></div>
     </div>
   </div>
@@ -1101,8 +1110,8 @@ body{cursor:auto!important;}
 
 <!-- ═══ EXPÉRIENCE ═══ -->
 <section class="sec alt" id="exp">
-  <div class="sec-label rv"><span class="num">03</span><span>Expérience</span></div>
-  <h2 class="sec-title rv">Expériences <em>professionnelles</em></h2>
+  <div class="sec-label rv"><span class="num">03</span><span data-fr="Expérience" data-en="Experience">Expérience</span></div>
+  <h2 class="sec-title rv" data-fr="Expériences <em>professionnelles</em>" data-en="Professional <em>experience</em>">Expériences <em>professionnelles</em></h2>
   <div class="timeline">
     <div class="tl-item rv">
       <div class="tl-left"><div class="tl-period">Fév. – Juin 2026</div><div class="tl-badge-exp pfe">PFE</div></div>
@@ -1178,8 +1187,8 @@ body{cursor:auto!important;}
 
 <!-- ═══ CERTIFICATIONS ═══ -->
 <section class="sec" id="certs">
-  <div class="sec-label rv"><span class="num">04</span><span>Certifications</span></div>
-  <h2 class="sec-title rv">Certifications <em>&amp; formations</em></h2>
+  <div class="sec-label rv"><span class="num">04</span><span data-fr="Certifications" data-en="Certifications">Certifications</span></div>
+  <h2 class="sec-title rv" data-fr="Certifications <em>&amp; formations</em>" data-en="Certifications <em>&amp; training</em>">Certifications <em>&amp; formations</em></h2>
   <div class="cert-grid">
     <div class="cert-card rv"><div class="cert-row"><img src="ISC2.jpg" class="cert-img" alt="ISC2" onclick="openLightbox('ISC2.jpg','ISC² CC')"><div><div class="cert-top"><span class="cert-iss">ISC²</span><span class="cert-date">Nov. 2025</span></div><div class="cert-name">Certified in Cybersecurity (CC)</div><div class="cert-desc">Risk management, governance, IAM, security operations.</div><a href="https://www.credly.com/badges/47dfc77c-79a2-4ff2-ad2c-b000daaae3f3" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;margin-top:8px;font-family:var(--font-mono);font-size:9.5px;color:var(--accent2);letter-spacing:.05em;text-decoration:none;">✓ Vérifier la certification<svg viewBox="0 0 16 16" fill="none" style="width:10px"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div></div>
     <div class="cert-card rv d1"><div class="cert-row"><img src="HCIA-5G.jpg" class="cert-img" alt="HCIA 5G" onclick="openLightbox('HCIA-5G.jpg','HCIA-5G V2.0')"><div><div class="cert-top"><span class="cert-iss">Huawei</span><span class="cert-date">Nov. 2025</span></div><div class="cert-name">HCIA-5G V2.0</div><div class="cert-desc">Architecture 5G NR, NSA/SA, RAN, Massive MIMO.</div></div></div></div>
@@ -1192,8 +1201,8 @@ body{cursor:auto!important;}
 
 <!-- ═══ PROJETS ═══ -->
 <section class="sec alt" id="proj">
-  <div class="sec-label rv"><span class="num">05</span><span>Projets</span></div>
-  <h2 class="sec-title rv">Projets <em>&amp; réalisations</em></h2>
+  <div class="sec-label rv"><span class="num">05</span><span data-fr="Projets" data-en="Projects">Projets</span></div>
+  <h2 class="sec-title rv" data-fr="Projets <em>&amp; réalisations</em>" data-en="Projects <em>&amp; achievements</em>">Projets <em>&amp; réalisations</em></h2>
   <div class="proj-grid-new">
 
     <div class="pcard rv" onclick="openProjModal('pfe')">
@@ -1337,16 +1346,16 @@ body{cursor:auto!important;}
 </section>
 <!-- ═══ CONTACT ═══ -->
 <section class="sec alt" id="contact">
-  <div class="sec-label rv"><span class="num">07</span><span>Contact</span></div>
+  <div class="sec-label rv"><span class="num">07</span><span data-fr="Contact" data-en="Contact">Contact</span></div>
   <div class="contact-grid">
     <div>
-      <h2 class="sec-title rv">Travaillons<br><em>ensemble</em></h2>
-      <p class="c-desc rv">Disponible pour un premier poste en ingénierie réseaux, télécoms ou sécurité des systèmes. Ouvert aux missions d'audit, de supervision et de déploiement d'infrastructures.</p>
+      <h2 class="sec-title rv" data-fr="Travaillons<br><em>ensemble</em>" data-en="Let's work<br><em>together</em>">Travaillons<br><em>ensemble</em></h2>
+      <p class="c-desc rv" data-fr="Disponible pour un premier poste en ingénierie réseaux, télécoms ou sécurité des systèmes. Ouvert aux missions d'audit, de supervision et de déploiement d'infrastructures." data-en="Available for a first role in networks, telecom or systems security engineering. Open to audit, monitoring and infrastructure deployment assignments.">Disponible pour un premier poste en ingénierie réseaux, télécoms ou sécurité des systèmes. Ouvert aux missions d'audit, de supervision et de déploiement d'infrastructures.</p>
       <div class="c-links rv d1">
-        <a href="CV HOUSSAMEDDINE MARCHOUAL.pdf" download class="c-link"><span class="c-ico">⬇</span>Télécharger mon CV (PDF)</a>
+        <a href="CV HOUSSAMEDDINE MARCHOUAL.pdf" download class="c-link"><span class="c-ico">⬇</span><span data-fr="Télécharger mon CV (PDF)" data-en="Download my CV (PDF)">Télécharger mon CV (PDF)</span></a>
         <a href="mailto:houssameddinemarchoual@gmail.com" class="c-link"><span class="c-ico">✉</span>houssameddinemarchoual@gmail.com</a>
-        <a href="https://www.linkedin.com/in/houssameddine-marchoual-b10ab0298/" target="_blank" class="c-link"><span class="c-ico">in</span>LinkedIn · Profil professionnel</a>
-        <div class="c-link"><span class="c-ico">📍</span>Casablanca, Maroc</div>
+        <a href="https://www.linkedin.com/in/houssameddine-marchoual-b10ab0298/" target="_blank" class="c-link"><span class="c-ico">in</span><span data-fr="LinkedIn · Profil professionnel" data-en="LinkedIn · Professional profile">LinkedIn · Profil professionnel</span></a>
+        <div class="c-link"><span class="c-ico">📍</span><span data-fr="Casablanca, Maroc" data-en="Casablanca, Morocco">Casablanca, Maroc</span></div>
       </div>
     </div>
     <div class="rv d2">
@@ -1356,13 +1365,13 @@ body{cursor:auto!important;}
     <input type="text" id="f-hp" name="company" tabindex="-1" autocomplete="off">
   </div>
         <div class="f-row">
-          <div class="f-field"><label>Nom complet</label><input type="text" id="f-name" placeholder="Votre nom" required minlength="2"></div>
-          <div class="f-field"><label>Email</label><input type="email" id="f-email" placeholder="votre@email.com" required></div>
+          <div class="f-field"><label data-fr="Nom complet" data-en="Full name">Nom complet</label><input type="text" id="f-name" placeholder="Votre nom" required minlength="2"></div>
+          <div class="f-field"><label data-fr="Email" data-en="Email">Email</label><input type="email" id="f-email" placeholder="votre@email.com" required></div>
         </div>
-        <div class="f-field"><label>Objet</label><input type="text" id="f-subject" placeholder="Collaboration / recrutement / projet..."></div>
-        <div class="f-field"><label>Message</label><textarea rows="5" id="f-msg" placeholder="Décrivez votre besoin..." required minlength="10"></textarea></div>
+        <div class="f-field"><label data-fr="Objet" data-en="Subject">Objet</label><input type="text" id="f-subject" placeholder="Collaboration / recrutement / projet..."></div>
+        <div class="f-field"><label data-fr="Message" data-en="Message">Message</label><textarea rows="5" id="f-msg" placeholder="Décrivez votre besoin..." required minlength="10"></textarea></div>
         <button type="submit" class="btn-main" id="f-btn" style="align-self:flex-start">
-          <span id="f-btn-txt">Envoyer le message</span>
+          <span id="f-btn-txt" data-fr="Envoyer le message" data-en="Send message">Envoyer le message</span>
           <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <p class="f-note" id="fnote"></p>
@@ -1749,7 +1758,7 @@ if(savedLang&&savedLang!=='fr')switchLang(savedLang);
   function draw(){
     ctx.clearRect(0,0,W,H);
     const light=document.body.classList.contains('light');
-    ctx.strokeStyle=light?'rgba(99,102,241,.04)':'rgba(0,255,153,.022)';ctx.lineWidth=.5;
+    ctx.strokeStyle=light?'rgba(37,99,235,.04)':'rgba(0,255,153,.022)';ctx.lineWidth=.5;
     for(let x=0;x<W;x+=60){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}
     for(let y=0;y<H;y+=60){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
     pts.forEach((p,i)=>{
@@ -1757,8 +1766,8 @@ if(savedLang&&savedLang!=='fr')switchLang(savedLang);
       if(d2<8000){const f=.28/d2;p.vx+=dx*f;p.vy+=dy*f;}
       const sp=Math.sqrt(p.vx*p.vx+p.vy*p.vy);if(sp>.75){p.vx/=sp*.92;p.vy/=sp*.92;}
       p.update();
-      for(let j=i+1;j<pts.length;j++){const q=pts[j];const ddx=p.x-q.x,ddy=p.y-q.y,dist=Math.sqrt(ddx*ddx+ddy*ddy);if(dist<120){ctx.beginPath();ctx.strokeStyle=light?`rgba(99,102,241,${.1*(1-dist/120)})`:`rgba(0,255,153,${.11*(1-dist/120)})`;ctx.lineWidth=.5;ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke();}}
-      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=light?`rgba(99,102,241,${p.a*.45})`:`rgba(0,255,153,${p.a*.55})`;ctx.fill();
+      for(let j=i+1;j<pts.length;j++){const q=pts[j];const ddx=p.x-q.x,ddy=p.y-q.y,dist=Math.sqrt(ddx*ddx+ddy*ddy);if(dist<120){ctx.beginPath();ctx.strokeStyle=light?`rgba(37,99,235,${.1*(1-dist/120)})`:`rgba(0,255,153,${.11*(1-dist/120)})`;ctx.lineWidth=.5;ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke();}}
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=light?`rgba(37,99,235,${p.a*.45})`:`rgba(0,255,153,${p.a*.55})`;ctx.fill();
     });
     requestAnimationFrame(draw);
   }
