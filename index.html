@@ -33,6 +33,7 @@
 <style>
 /* ═══ RESET & ROOT ═══ */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:'Sora',sans-serif;overflow-x:hidden;cursor:none;}
 :root{
@@ -632,7 +633,6 @@ body.light .footer-bottom{color:rgba(26,37,53,.22);}
 @media(max-width:768px){
   html,body{overflow-x:hidden;width:100%;max-width:100vw;}
   .hero-name{white-space:normal!important;word-break:break-word;}
-  .hero-role{white-space:normal!important;}
   .hero{padding-top:100px;}
   .hero-svg-wrap{max-width:100%;}
   .hero-badge{width:100%;max-width:100%;}
@@ -666,6 +666,25 @@ body.light .footer-bottom{color:rgba(26,37,53,.22);}
   padding:4px 11px!important;
   border-radius:999px!important;
   white-space:nowrap!important;
+}
+  /* ═══ CURSEUR NATIF PARTOUT (PC + Mobile) ═══ */
+#cur-dot{display:none!important;}
+body{cursor:auto!important;}
+
+/* ═══ LES 3 MOTS DU DOMAINE TOUJOURS GROUPÉS SUR UNE LIGNE ═══ */
+.hero-role{
+  white-space:nowrap!important;
+  font-size:clamp(10px,3.6vw,16px)!important;
+  letter-spacing:0!important;
+}
+@media(max-width:480px){
+  .eyebrow{
+    white-space:nowrap!important;
+    overflow-x:auto!important;
+    font-size:clamp(8px,2.6vw,11px)!important;
+    scrollbar-width:none;
+  }
+  .eyebrow::-webkit-scrollbar{display:none;}
 }
 </style>
   <script type="text/javascript">
