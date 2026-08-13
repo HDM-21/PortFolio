@@ -238,7 +238,8 @@ body.light .int-chip-ico{background:rgba(37,99,235,.09);border-color:rgba(37,99,
 .sk-lvl{font-family:var(--font-mono);font-size:11px;font-weight:700;padding:4px 11px;border-radius:100px;letter-spacing:.05em;}
 .sk-lvl.e{background:rgba(0,255,153,.11);color:var(--accent2);border:1px solid rgba(0,255,153,.18);}
 .sk-lvl.a{background:rgba(0,200,255,.09);color:var(--accent);border:1px solid rgba(0,200,255,.16);}
-.sk-lvl.i{background:rgba(234,244,240,.045);color:var(--muted2);border:1px solid rgba(234,244,240,.075);}
+.sk-lvl.i{background:rgba(255,90,54,.13);color:#ff5a36;border:1px solid rgba(255,90,54,.28);}
+body.light .sk-lvl.i{background:rgba(217,68,26,.1);color:#d9441a;border:1px solid rgba(217,68,26,.24);}
 
 /* ═══ TERMINAL ═══ */
 .terminal{background:rgba(3,7,9,.92);border:1px solid rgba(0,255,153,.14);border-radius:10px;overflow:hidden;margin-bottom:30px;backdrop-filter:blur(22px);}
@@ -265,7 +266,8 @@ body.light .int-chip-ico{background:rgba(37,99,235,.09);border-color:rgba(37,99,
 .tl-badge-exp{display:inline-block;font-family:var(--font-mono);font-size:8.5px;font-weight:600;padding:3px 10px;border-radius:100px;letter-spacing:.07em;text-transform:uppercase;}
 .tl-badge-exp.pfe{background:rgba(0,255,153,.11);color:var(--accent2);border:1px solid rgba(0,255,153,.2);}
 .tl-badge-exp.stg{background:rgba(0,200,255,.09);color:var(--accent);border:1px solid rgba(0,200,255,.18);}
-.tl-badge-exp.ini{background:rgba(255,176,32,.12);color:#ffb020;border:1px solid rgba(255,176,32,.28);}
+.tl-badge-exp.ini{background:rgba(255,214,10,.15);color:#ffd60a;border:1px solid rgba(255,214,10,.32);}
+body.light .tl-badge-exp.ini{background:rgba(124,58,237,.1);color:#7c3aed;border:1px solid rgba(124,58,237,.26);}
 .tl-spine{display:flex;flex-direction:column;align-items:center;padding-top:27px;}
 .tl-dot-exp{width:10px;height:10px;border:2px solid var(--accent2);border-radius:50%;background:var(--bg);flex-shrink:0;z-index:1;box-shadow:0 0 0 4px rgba(0,255,153,.07);transition:box-shadow .3s;}
 .tl-item:hover .tl-dot-exp{box-shadow:0 0 0 8px rgba(0,255,153,.1),0 0 14px rgba(0,255,153,.28);}
@@ -546,6 +548,12 @@ body.light .retour-card:hover{border-color:rgba(37,99,235,.32);}
 .retour-ico{width:42px;height:42px;border-radius:11px;background:rgba(0,255,153,.08);border:1px solid rgba(0,255,153,.16);display:flex;align-items:center;justify-content:center;margin-bottom:18px;color:var(--accent2);}
 body.light .retour-ico{background:rgba(37,99,235,.08);border-color:rgba(37,99,235,.18);color:var(--accent);}
 .retour-ico svg{width:20px;height:20px;}
+.retour-ico.c1{background:rgba(0,200,255,.1);border-color:rgba(0,200,255,.24);color:#00c8ff;}
+.retour-ico.c2{background:rgba(255,176,32,.1);border-color:rgba(255,176,32,.26);color:#ffb020;}
+.retour-ico.c3{background:rgba(183,140,255,.12);border-color:rgba(183,140,255,.28);color:#b78cff;}
+body.light .retour-ico.c1{background:rgba(37,99,235,.08);border-color:rgba(37,99,235,.2);color:#2563eb;}
+body.light .retour-ico.c2{background:rgba(217,119,15,.08);border-color:rgba(217,119,15,.2);color:#b5780f;}
+body.light .retour-ico.c3{background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.2);color:#7c3aed;}
 .retour-title{font-family:var(--font-title);font-size:16.5px;font-weight:700;color:var(--text);margin-bottom:12px;line-height:1.35;}
 .retour-desc{font-size:14px;color:var(--muted);line-height:1.75;}
 
@@ -797,6 +805,20 @@ body.light .term-text{color:var(--muted);}
 /* ═══ FIX — Menu mobile : fond opaque garanti ═══ */
 .nav-links{background-color:#030709;}
 body.light .nav-links{background-color:#ffffff;}
+
+/* ═══ FIX — Icônes couleur unique par carte c1/c2/c3 et int-chip c1..c6 (voir int-chip-ico plus bas) ═══ */
+.int-chip-ico.c1{background:rgba(0,200,255,.1);border-color:rgba(0,200,255,.24);color:#00c8ff;}
+.int-chip-ico.c2{background:rgba(255,92,92,.1);border-color:rgba(255,92,92,.26);color:#ff5c5c;}
+.int-chip-ico.c3{background:rgba(255,176,32,.1);border-color:rgba(255,176,32,.26);color:#ffb020;}
+.int-chip-ico.c4{background:rgba(0,224,184,.1);border-color:rgba(0,224,184,.26);color:#00e0b8;}
+.int-chip-ico.c5{background:rgba(183,140,255,.1);border-color:rgba(183,140,255,.26);color:#b78cff;}
+.int-chip-ico.c6{background:rgba(0,255,153,.1);border-color:rgba(0,255,153,.26);color:#00ff99;}
+body.light .int-chip-ico.c1{background:rgba(37,99,235,.08);border-color:rgba(37,99,235,.2);color:#2563eb;}
+body.light .int-chip-ico.c2{background:rgba(220,38,38,.08);border-color:rgba(220,38,38,.2);color:#dc2626;}
+body.light .int-chip-ico.c3{background:rgba(180,120,10,.08);border-color:rgba(180,120,10,.2);color:#b5780f;}
+body.light .int-chip-ico.c4{background:rgba(13,148,136,.08);border-color:rgba(13,148,136,.2);color:#0d9488;}
+body.light .int-chip-ico.c5{background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.2);color:#7c3aed;}
+body.light .int-chip-ico.c6{background:rgba(13,148,136,.08);border-color:rgba(13,148,136,.2);color:#0d9488;}
 </style>
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -1084,12 +1106,12 @@ body.light .nav-links{background-color:#ffffff;}
       </div>
       <div class="int-title" data-fr="Domaines d'intérêt" data-en="Areas of interest">Domaines d'intérêt</div>
       <div class="int-grid">
-        <div class="int-chip"><span class="int-chip-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span><span data-fr="Conception &amp; Déploiement" data-en="Design &amp; Deployment">Conception &amp; Déploiement</span></div>
-        <div class="int-chip"><span class="int-chip-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3.5v5.2c0 4.4-3 8.3-7 9.3-4-1-7-4.9-7-9.3V6.5L12 3z"/></svg></span><span data-fr="Pentesting" data-en="Penetration Testing">Pentesting</span></div>
-        <div class="int-chip"><span class="int-chip-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></span><span data-fr="Monitoring &amp; SIEM" data-en="Monitoring &amp; SIEM">Monitoring &amp; SIEM</span></div>
-        <div class="int-chip"><span class="int-chip-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><span data-fr="Virtualisation &amp; Cloud" data-en="Virtualization &amp; Cloud">Virtualisation &amp; Cloud</span></div>
-        <div class="int-chip"><span class="int-chip-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 16 0M2 12h2M20 12h2M12 2v2M12 20v2"/></svg></span><span data-fr="5G NR &amp; RAN" data-en="5G NR &amp; RAN">5G NR &amp; RAN</span></div>
-        <div class="int-chip"><span class="int-chip-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></span><span data-fr="Sécurité Réseaux &amp; Systèmes" data-en="Network &amp; Systems Security">Sécurité Réseaux &amp; Systèmes</span></div>
+        <div class="int-chip"><span class="int-chip-ico c1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span><span data-fr="Conception &amp; Déploiement" data-en="Design &amp; Deployment">Conception &amp; Déploiement</span></div>
+        <div class="int-chip"><span class="int-chip-ico c2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="7" width="8" height="10" rx="4"/><path d="M8 10H4M16 10h4M8 14H4M16 14h4M12 7V4M9 4l1.5 2M15 4l-1.5 2M9 20l1-2M15 20l-1-2"/></svg></span><span data-fr="Pentesting" data-en="Penetration Testing">Pentesting</span></div>
+        <div class="int-chip"><span class="int-chip-ico c3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 12 8 12 10 6 14 18 16 12 21 12"/></svg></span><span data-fr="Monitoring &amp; SIEM" data-en="Monitoring &amp; SIEM">Monitoring &amp; SIEM</span></div>
+        <div class="int-chip"><span class="int-chip-ico c4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4 4 0 0 1-.6-7.96A5 5 0 0 1 16 8a3.5 3.5 0 0 1 1 6.9"/><path d="M7 18h10"/></svg></span><span data-fr="Virtualisation &amp; Cloud" data-en="Virtualization &amp; Cloud">Virtualisation &amp; Cloud</span></div>
+        <div class="int-chip"><span class="int-chip-ico c5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 16 0M2 12h2M20 12h2M12 2v2M12 20v2"/></svg></span><span data-fr="5G NR &amp; RAN" data-en="5G NR &amp; RAN">5G NR &amp; RAN</span></div>
+        <div class="int-chip"><span class="int-chip-ico c6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/><rect x="9.5" y="11" width="5" height="4" rx="1"/><path d="M10.5 11V9.5a1.5 1.5 0 0 1 3 0V11"/></svg></span><span data-fr="Sécurité Réseaux &amp; Systèmes" data-en="Network &amp; Systems Security">Sécurité Réseaux &amp; Systèmes</span></div>
       </div>
     </div>
   </div>
@@ -1390,21 +1412,21 @@ body.light .nav-links{background-color:#ffffff;}
   <div class="retour-grid">
     <div class="retour-card rv d1">
       <span class="retour-num">01</span>
-      <div class="retour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></div>
+      <div class="retour-ico c1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="3" x2="12" y2="7"/><line x1="12" y1="17" x2="12" y2="21"/><line x1="3" y1="12" x2="7" y2="12"/><line x1="17" y1="12" x2="21" y2="12"/><circle cx="12" cy="12" r="2"/></svg></div>
       <div class="retour-title" data-fr="Le constat technique" data-en="The technical finding">Le constat technique</div>
       <div class="retour-desc" data-fr="Un audit réseau a révélé des failles concrètes : protocoles d'administration non sécurisés, accès distants non chiffrés, infrastructure vieillissante encore en production — des points d'entrée réels pour un attaquant opportuniste." data-en="A network audit revealed concrete flaws: unsecured administration protocols, unencrypted remote access, aging infrastructure still in production — real entry points for an opportunistic attacker.">Un audit réseau a révélé des failles concrètes : protocoles d'administration non sécurisés, accès distants non chiffrés, infrastructure vieillissante encore en production — des points d'entrée réels pour un attaquant opportuniste.</div>
     </div>
 
     <div class="retour-card rv d2">
       <span class="retour-num">02</span>
-      <div class="retour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3.5v5.2c0 4.4-3 8.3-7 9.3-4-1-7-4.9-7-9.3V6.5L12 3z"/><path d="M9.5 12l2 2 3.5-4"/></svg></div>
+      <div class="retour-ico c2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 7.2-2.4"/><line x1="12" y1="15" x2="12" y2="17"/></svg></div>
       <div class="retour-title" data-fr="Un faux sentiment de sécurité" data-en="A false sense of security">Un faux sentiment de sécurité</div>
       <div class="retour-desc" data-fr="L'argument reçu : sans accès direct au réseau, pas de risque réel. Or la plupart des attaques ne ciblent personne en particulier — elles scannent Internet en continu à la recherche de la moindre faille exploitable, quelle que soit la taille de l'entreprise." data-en="The pushback I got: without direct network access, there's no real risk. But most attacks don't target anyone specifically — they continuously scan the internet for any exploitable flaw, regardless of company size.">L'argument reçu : sans accès direct au réseau, pas de risque réel. Or la plupart des attaques ne ciblent personne en particulier — elles scannent Internet en continu à la recherche de la moindre faille exploitable, quelle que soit la taille de l'entreprise.</div>
     </div>
 
     <div class="retour-card rv d3">
       <span class="retour-num">03</span>
-      <div class="retour-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"/><circle cx="12" cy="12" r="5"/></svg></div>
+      <div class="retour-ico c3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a6 6 0 0 0-4 10.5c.6.6 1 1.5 1 2.5h6c0-1 .4-1.9 1-2.5A6 6 0 0 0 12 2z"/></svg></div>
       <div class="retour-title" data-fr="Ce que j'en retiens" data-en="What I took away">Ce que j'en retiens</div>
       <div class="retour-desc" data-fr="Le vrai obstacle n'est pas technique mais économique : un investissement sécurité ne produit aucun résultat visible tant qu'aucun incident ne survient. Savoir traduire un risque en langage de coût pour un décideur non-technique est une compétence aussi rare que la compétence technique elle-même." data-en="The real obstacle isn't technical but economic: a security investment shows no visible result until an incident happens. Translating risk into cost language for a non-technical decision-maker is a skill as rare as the technical skill itself.">Le vrai obstacle n'est pas technique mais économique : un investissement sécurité ne produit aucun résultat visible tant qu'aucun incident ne survient. Savoir traduire un risque en langage de coût pour un décideur non-technique est une compétence aussi rare que la compétence technique elle-même.</div>
     </div>
