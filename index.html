@@ -2115,5 +2115,10 @@ document.getElementById('cform').addEventListener('submit',async e=>{
 document.getElementById('f-email').addEventListener('blur',function(){if(this.value&&!isValidEmail(this.value)){this.classList.add('invalid');this.classList.remove('valid');setNote('⚠ Format email invalide.',true);}else if(this.value){this.classList.remove('invalid');this.classList.add('valid');setNote('',false);}});
 document.getElementById('f-name').addEventListener('blur',function(){if(this.value.trim().length<2){this.classList.add('invalid');this.classList.remove('valid');}else{this.classList.remove('invalid');this.classList.add('valid');}});
 </script>
+<!-- Vercel Speed Insights -->
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>
