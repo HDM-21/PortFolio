@@ -110,7 +110,7 @@ module.exports = async (req, res) => {
       },
       body: JSON.stringify({
         // "from" doit être une adresse sur un domaine que vous avez vérifié dans Resend
-        from: "Portfolio <contact@votredomaine.com>",
+        from: "Portfolio <onboarding@resend.dev>",
         to: ["houssameddinemarchoual@gmail.com"],
         reply_to: cleanEmail,
         subject: `[Portfolio] ${cleanSubject}`,
