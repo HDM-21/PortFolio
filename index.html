@@ -1047,70 +1047,72 @@ body.light .domains-block{border-top-color:rgba(26,37,53,.08);}
 .nav-link.active::after{content:'';position:absolute;left:13px;right:13px;bottom:1px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--accent2),var(--accent));box-shadow:0 0 8px rgba(0,255,153,.5);}
 body.light .nav-link.active::after{box-shadow:0 0 8px rgba(13,148,136,.4);}
 
-/* ===== MENU MOBILE : panneau repensé ===== */
+/* ===== MENU MOBILE : panneau repensé (fort contraste) ===== */
 @media(max-width:1180px){
   .nav-links{
     display:flex;flex-direction:column;
     position:fixed;inset:0 0 0 auto;
-    width:min(82vw,300px);height:100vh;height:100dvh;
+    width:min(86vw,320px);height:100vh;height:100dvh;
     isolation:isolate;
-    background-color:#050d0b;
-    background-image:linear-gradient(170deg,#050d0b 0%,#030709 55%,rgba(0,255,153,.07) 100%);
-    border-left:1px solid rgba(0,255,153,.14);
-    box-shadow:-24px 0 60px rgba(0,0,0,.65);
+    background:#040c0a;
+    box-shadow:-30px 0 70px rgba(0,0,0,.7);
     padding:0;margin:0;gap:0;
     overflow-y:auto;-webkit-overflow-scrolling:touch;
     z-index:650;
     transform:translateX(100%);
-    transition:transform .32s cubic-bezier(.23,1,.32,1);
+    transition:transform .35s cubic-bezier(.23,1,.32,1);
     visibility:hidden;
   }
-  .nav-links.open{transform:translateX(0);visibility:visible;}
-  body.light .nav-links{background-color:#ffffff;background-image:linear-gradient(170deg,#ffffff 0%,#f0f4f8 60%,rgba(37,99,235,.06) 100%);border-left-color:rgba(37,99,235,.16);}
   .nav-links::before{
-    content:'Navigation';
-    display:flex;align-items:center;gap:8px;
-    font-family:var(--font-title);font-size:12px;font-weight:700;letter-spacing:.04em;
-    color:rgba(0,255,153,.6);padding:26px 24px 14px;
-    border-bottom:1px solid rgba(0,255,153,.09);margin-bottom:10px;
+    content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
+    background:
+      radial-gradient(560px 420px at 100% -8%,rgba(0,255,153,.20),transparent 60%),
+      radial-gradient(420px 360px at -10% 100%,rgba(0,200,255,.14),transparent 65%);
   }
-  body.light .nav-links::before{color:rgba(37,99,235,.65);border-bottom-color:rgba(37,99,235,.1);}
+  .nav-links.open{transform:translateX(0);visibility:visible;}
+  body.light .nav-links{background:#ffffff;}
+  body.light .nav-links::before{background:radial-gradient(560px 420px at 100% -8%,rgba(37,99,235,.12),transparent 60%),radial-gradient(420px 360px at -10% 100%,rgba(13,148,136,.1),transparent 65%);}
+  .nav-links{padding-top:86px;padding-bottom:28px;}
+
   .nav-links .nav-link{
-    margin:2px 12px;padding:14px 16px;
-    font-family:var(--font-title);font-size:15px;font-weight:600;letter-spacing:0;text-transform:none;
-    border:1px solid transparent;border-radius:11px;
-    align-items:center;gap:12px;line-height:1.3;
-    background:rgba(255,255,255,.018);color:rgba(234,244,240,.72);
+    position:relative;
+    margin:0;padding:18px 26px;
+    font-family:var(--font-title);font-size:19px;font-weight:700;letter-spacing:-.01em;text-transform:none;
+    border:none;border-bottom:1px solid rgba(0,255,153,.08);border-radius:0;
+    align-items:center;gap:16px;line-height:1.25;
+    background:transparent;color:rgba(234,244,240,.62);
+    transition:color .2s,background .2s,padding-left .25s;
   }
-  .nav-links .nav-link .nn{font-family:var(--font-mono);font-size:10px;font-weight:700;flex:0 0 20px;width:20px;padding-top:0;}
+  body.light .nav-links .nav-link{border-bottom-color:rgba(37,99,235,.08);color:rgba(26,37,53,.6);}
+  .nav-links .nav-link::before{
+    content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+    background:linear-gradient(180deg,var(--accent2),var(--accent));
+    transform:scaleY(0);transform-origin:center;transition:transform .25s;
+  }
+  .nav-links .nav-link .nn{
+    font-family:var(--font-mono);font-size:12px;font-weight:700;flex:0 0 24px;width:24px;padding-top:0;
+    color:var(--accent2);opacity:.55;
+  }
   .nav-links .nav-link:hover,.nav-links .nav-link.active{
-    color:var(--text);
-    background:linear-gradient(135deg,rgba(0,255,153,.09),rgba(0,200,255,.04));
-    border-color:rgba(0,255,153,.2);
+    color:var(--text);background:rgba(0,255,153,.055);padding-left:32px;
   }
-  body.light .nav-links .nav-link{background:rgba(37,99,235,.035);color:rgba(26,37,53,.72);}
-  body.light .nav-links .nav-link:hover,body.light .nav-links .nav-link.active{color:var(--text);background:rgba(37,99,235,.08);border-color:rgba(37,99,235,.22);}
+  .nav-links .nav-link:hover::before,.nav-links .nav-link.active::before{transform:scaleY(1);}
+  .nav-links .nav-link.active{color:var(--accent2);}
+  body.light .nav-links .nav-link:hover,body.light .nav-links .nav-link.active{background:rgba(37,99,235,.06);}
+  body.light .nav-links .nav-link.active{color:var(--accent);}
   .nav-links .nav-link::after{display:none!important;}
+
   .nav-mobile-foot{
-    display:flex;flex-direction:column;gap:12px;
-    margin-top:auto;padding:20px 24px 26px;
-    border-top:1px solid rgba(0,255,153,.09);
+    position:relative;z-index:1;
+    display:flex;flex-direction:column;gap:6px;
+    margin-top:auto;padding:22px 26px 8px;
   }
-  body.light .nav-mobile-foot{border-top-color:rgba(37,99,235,.1);}
-  .nav-mobile-links{display:flex;gap:10px;}
-  .nav-mobile-links a{
-    flex:1;display:flex;align-items:center;justify-content:center;gap:7px;
-    padding:11px 8px;border-radius:10px;text-decoration:none;
-    font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:.06em;
-    color:var(--accent2);background:rgba(0,255,153,.06);border:1px solid rgba(0,255,153,.18);
-  }
-  body.light .nav-mobile-links a{color:var(--accent);background:rgba(37,99,235,.06);border-color:rgba(37,99,235,.2);}
-  .nav-mobile-links a svg{width:13px;height:13px;}
-  .nav-mobile-note{font-family:var(--font-mono);font-size:9px;color:var(--muted2);letter-spacing:.1em;text-align:center;}
+  .nav-mobile-note{font-family:var(--font-mono);font-size:10px;color:var(--muted2);letter-spacing:.12em;text-transform:uppercase;}
+
   .nav-overlay{
     position:fixed;inset:0;z-index:640;
-    background:rgba(0,0,0,.55);
-    -webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);
+    background:rgba(0,0,0,.6);
+    -webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);
     opacity:0;pointer-events:none;
     transition:opacity .3s;
   }
@@ -1277,11 +1279,6 @@ body.light .cert-verified{color:var(--accent);background:rgba(37,99,235,.06);bor
     <a href="#retour"     class="nav-link"><span class="nn">06</span><span data-fr="Retour d'exp" data-en="Field Insights">Retour d'exp</span></a>
     <a href="#contact"    class="nav-link"><span class="nn">07</span><span data-fr="Contact" data-en="Contact">Contact</span></a>
     <div class="nav-mobile-foot">
-      <div class="nav-mobile-links">
-        <a href="mailto:houssameddinemarchoual@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>Email</span></a>
-        <a href="https://www.linkedin.com/in/houssameddine-marchoual-b10ab0298/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.24 8.25h4.52V23H.24V8.25zM8.34 8.25h4.33v2.01h.06c.6-1.14 2.08-2.34 4.28-2.34 4.58 0 5.43 3.01 5.43 6.92V23h-4.52v-7.28c0-1.74-.03-3.97-2.42-3.97-2.42 0-2.79 1.89-2.79 3.84V23H8.34V8.25z"/></svg><span>LinkedIn</span></a>
-        <a href="CV HOUSSAMEDDINE MARCHOUAL.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span>CV</span></a>
-      </div>
       <div class="nav-mobile-note" data-fr="Casablanca, Maroc · Disponible" data-en="Casablanca, Morocco · Available">Casablanca, Maroc · Disponible</div>
     </div>
   </nav>
