@@ -720,18 +720,44 @@ body.light .proj-fs-tag{background:rgba(37,99,235,.07);color:var(--accent);borde
 body.light .retour-quote{background:linear-gradient(135deg,rgba(37,99,235,.05),rgba(13,148,136,.03));border-color:rgba(37,99,235,.16);}
 
 .artc-title{margin:52px 0 20px;}
-.artc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.artc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
 @media(max-width:900px){.artc-grid{grid-template-columns:1fr;}}
-.artc-card{display:flex;flex-direction:column;gap:12px;background:rgba(0,10,5,.35);border:1px solid rgba(0,255,153,.1);border-radius:14px;padding:26px 24px;text-decoration:none;transition:border-color .25s,transform .25s,box-shadow .25s;}
-body.light .artc-card{background:rgba(255,255,255,.9);border-color:rgba(37,99,235,.12);}
-.artc-card:hover{border-color:rgba(0,255,153,.32);transform:translateY(-4px);box-shadow:0 16px 34px -20px rgba(0,255,153,.35);}
-body.light .artc-card:hover{border-color:rgba(37,99,235,.32);}
-.artc-tag{align-self:flex-start;font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2);background:rgba(0,255,153,.08);border:1px solid rgba(0,255,153,.2);padding:5px 12px;border-radius:999px;}
-body.light .artc-tag{color:var(--accent);background:rgba(37,99,235,.07);border-color:rgba(37,99,235,.2);}
-.artc-title2{font-family:var(--font-title);font-size:16.5px;font-weight:700;color:var(--text);line-height:1.35;}
+.artc-card{
+  position:relative;
+  display:flex;flex-direction:column;gap:12px;
+  background:
+    radial-gradient(120% 140% at 0% 0%,rgba(var(--artc-rgb),.16),transparent 55%),
+    rgba(0,10,5,.4);
+  border:1.5px solid rgba(var(--artc-rgb),.55);
+  border-radius:16px;
+  padding:28px 24px 26px;
+  text-decoration:none;
+  overflow:hidden;
+  transition:border-color .25s,transform .3s,box-shadow .3s,background .3s;
+  box-shadow:0 0 0 1px rgba(var(--artc-rgb),.06),0 18px 30px -22px rgba(var(--artc-rgb),.5);
+}
+.artc-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,rgba(var(--artc-rgb),1),rgba(var(--artc-rgb),0));
+}
+.artc-card::after{
+  content:attr(data-idx);
+  position:absolute;top:14px;right:16px;
+  font-family:var(--font-mono);font-size:34px;font-weight:800;
+  color:rgba(var(--artc-rgb),.16);
+  line-height:1;letter-spacing:0;
+  pointer-events:none;
+}
+body.light .artc-card{background:radial-gradient(120% 140% at 0% 0%,rgba(var(--artc-rgb),.1),transparent 55%),rgba(255,255,255,.94);}
+.artc-card:hover{border-color:rgba(var(--artc-rgb),.9);transform:translateY(-6px);box-shadow:0 22px 40px -18px rgba(var(--artc-rgb),.55);}
+.artc-card:nth-child(4n+1){--artc-rgb:0,255,153;}
+.artc-card:nth-child(4n+2){--artc-rgb:56,178,255;}
+.artc-card:nth-child(4n+3){--artc-rgb:189,110,255;}
+.artc-card:nth-child(4n+4){--artc-rgb:255,150,60;}
+.artc-tag{align-self:flex-start;font-family:var(--font-mono);font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:rgb(var(--artc-rgb));background:rgba(var(--artc-rgb),.12);border:1px solid rgba(var(--artc-rgb),.4);padding:5px 12px;border-radius:999px;}
+.artc-title2{font-family:var(--font-title);font-size:16.5px;font-weight:700;color:var(--text);line-height:1.35;padding-right:30px;}
 .artc-desc{font-size:13.5px;color:var(--muted);line-height:1.7;flex:1;}
-.artc-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:11.5px;font-weight:700;letter-spacing:.06em;color:var(--accent2);margin-top:4px;}
-body.light .artc-link{color:var(--accent);}
+.artc-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:11.5px;font-weight:800;letter-spacing:.06em;color:rgb(var(--artc-rgb));margin-top:4px;}
 .artc-link svg{width:14px;height:14px;transition:transform .25s;}
 .artc-card:hover .artc-link svg{transform:translateX(4px);}
 @media(max-width:640px){.artc-title{margin-top:40px;}}
@@ -894,28 +920,37 @@ body{cursor:auto!important;}
 .hero-role::-webkit-scrollbar{display:none;}
 @media(max-width:768px){
   .eyebrow{
-    background:none;
-    border:none;
-    padding:0;
-    border-radius:0;
-    font-family:var(--font-title);
-    font-weight:700;
-    letter-spacing:.01em;
+    display:inline-flex;
+    align-items:flex-start;
+    gap:10px;
+    background:linear-gradient(135deg,rgba(0,255,153,.14),rgba(0,255,153,.03));
+    border:1px solid rgba(0,255,153,.4);
+    padding:12px 16px;
+    border-radius:14px;
+    font-family:var(--font-mono);
+    font-weight:600;
+    letter-spacing:.03em;
+    word-spacing:.06em;
     text-transform:none;
-    font-size:13px;
+    font-size:12.5px;
+    line-height:1.7;
+    box-shadow:0 10px 26px -16px rgba(0,255,153,.4);
   }
+  body.light .eyebrow{background:linear-gradient(135deg,rgba(37,99,235,.1),rgba(37,99,235,.02));border-color:rgba(37,99,235,.35);box-shadow:0 10px 26px -16px rgba(37,99,235,.3);}
 }
 @media(max-width:480px){
   .eyebrow{
     white-space:normal!important;
     overflow-x:visible!important;
-    font-size:clamp(11px,3.2vw,13px)!important;
+    font-size:clamp(11.5px,3.3vw,13px)!important;
     max-width:100%;
     align-items:flex-start;
-    gap:8px;
-    line-height:1.5;
+    gap:9px;
+    line-height:1.75;
+    word-spacing:.08em;
+    padding:11px 14px;
   }
-  .eyebrow .live-dot{margin-top:5px;flex-shrink:0;}
+  .eyebrow .live-dot{margin-top:6px;flex-shrink:0;}
 }
   @media(max-width:760px){
   .tl-item{
@@ -998,8 +1033,9 @@ body.light .term-text{color:var(--muted);}
   .stat-val{font-size:clamp(.95rem,4.4vw,1.4rem);}
 }
 @media(max-width:480px){
-  .artc-card{padding:20px 18px;}
-  .artc-title2{font-size:15px;}
+  .artc-card{padding:22px 18px 20px;}
+  .artc-card::after{font-size:26px;top:12px;right:14px;}
+  .artc-title2{font-size:15px;padding-right:26px;}
   .exp-meta-grid{grid-template-columns:1fr 1fr;gap:9px;margin-bottom:30px;}
   .exp-meta-cell{padding:11px 13px;}
   .proj-fs-title{font-size:clamp(1.25rem,6.2vw,1.55rem)!important;}
@@ -1994,37 +2030,37 @@ body.light .cert-verified{color:var(--accent);background:rgba(37,99,235,.06);bor
 
   <div class="artc-title rv d3"><div class="sys-label"><span class="live-dot"></span><span class="lbl-slash">//</span><span data-fr="Articles &amp; ressources techniques" data-en="Technical articles &amp; resources">Articles &amp; ressources techniques</span></div></div>
   <div class="artc-grid rv d3">
-    <a class="artc-card" href="https://www.cloudflare.com/learning/network-layer/sd-wan-vs-mpls/" target="_blank" rel="noopener">
+    <a class="artc-card" data-idx="01" href="https://www.cloudflare.com/learning/network-layer/sd-wan-vs-mpls/" target="_blank" rel="noopener">
       <span class="artc-tag">SD-WAN vs MPLS</span>
       <h3 class="artc-title2" data-fr="SD-WAN ou MPLS : quelle architecture WAN choisir ?" data-en="SD-WAN or MPLS: which WAN architecture to choose?">SD-WAN ou MPLS : quelle architecture WAN choisir ?</h3>
       <p class="artc-desc" data-fr="Un arbitrage que j'ai dû trancher concrètement lors de mon PFE, en configurant un failover FortiGate à deux liens WAN actifs." data-en="A trade-off I had to make concretely during my final-year project, configuring a FortiGate failover with two active WAN links.">Un arbitrage que j'ai dû trancher concrètement lors de mon PFE, en configurant un failover FortiGate à deux liens WAN actifs.</p>
       <span class="artc-link" data-fr="Voir les détails" data-en="View details">Voir les détails <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </a>
-    <a class="artc-card" href="https://ipcisco.com/lesson/rsvp-te-overview/" target="_blank" rel="noopener">
+    <a class="artc-card" data-idx="02" href="https://ipcisco.com/lesson/rsvp-te-overview/" target="_blank" rel="noopener">
       <span class="artc-tag">RSVP-TE</span>
       <h3 class="artc-title2" data-fr="Ingénierie de trafic MPLS : comment fonctionne RSVP-TE" data-en="MPLS traffic engineering: how RSVP-TE works">Ingénierie de trafic MPLS : comment fonctionne RSVP-TE</h3>
       <p class="artc-desc" data-fr="Le protocole au cœur de ma migration réseau vers MPLS : chemins garantis par classe de service via RSVP-TE et DS-TE." data-en="The protocol at the heart of my MPLS network migration: guaranteed paths per service class via RSVP-TE and DS-TE.">Le protocole au cœur de ma migration réseau vers MPLS : chemins garantis par classe de service via RSVP-TE et DS-TE.</p>
       <span class="artc-link" data-fr="Voir les détails" data-en="View details">Voir les détails <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </a>
-    <a class="artc-card" href="https://documentation.wazuh.com/current/getting-started/index.html" target="_blank" rel="noopener">
+    <a class="artc-card" data-idx="03" href="https://documentation.wazuh.com/current/getting-started/index.html" target="_blank" rel="noopener">
       <span class="artc-tag">SIEM open-source</span>
       <h3 class="artc-title2" data-fr="Pourquoi les SIEM open-source comme Wazuh gagnent du terrain" data-en="Why open-source SIEMs like Wazuh are gaining ground">Pourquoi les SIEM open-source comme Wazuh gagnent du terrain</h3>
       <p class="artc-desc" data-fr="Déployé pendant mon stage PFE chez Synapsis-KS-Morocco pour centraliser les logs et accélérer la détection d'incidents." data-en="Deployed during my final-year internship at Synapsis-KS-Morocco to centralize logs and speed up incident detection.">Déployé pendant mon stage PFE chez Synapsis-KS-Morocco pour centraliser les logs et accélérer la détection d'incidents.</p>
       <span class="artc-link" data-fr="Voir les détails" data-en="View details">Voir les détails <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </a>
-    <a class="artc-card" href="https://csrc.nist.gov/pubs/sp/800/207/final" target="_blank" rel="noopener">
+    <a class="artc-card" data-idx="04" href="https://csrc.nist.gov/pubs/sp/800/207/final" target="_blank" rel="noopener">
       <span class="artc-tag">Zero Trust</span>
       <h3 class="artc-title2" data-fr="Zero Trust : pourquoi la segmentation VLAN/DMZ ne suffit plus" data-en="Zero Trust: why VLAN/DMZ segmentation isn't enough anymore">Zero Trust : pourquoi la segmentation VLAN/DMZ ne suffit plus</h3>
       <p class="artc-desc" data-fr="Un constat direct de mon audit d'infrastructure : la segmentation réseau reste indispensable mais doit désormais s'appuyer sur une vérification continue." data-en="A direct finding from my infrastructure audit: network segmentation is still essential but now needs to rely on continuous verification.">Un constat direct de mon audit d'infrastructure : la segmentation réseau reste indispensable mais doit désormais s'appuyer sur une vérification continue.</p>
       <span class="artc-link" data-fr="Voir les détails" data-en="View details">Voir les détails <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </a>
-    <a class="artc-card" href="https://www.enisa.europa.eu/news/enisa-news/how-can-eu-ports-tackle-new-cyber-threats" target="_blank" rel="noopener">
+    <a class="artc-card" data-idx="05" href="https://www.enisa.europa.eu/news/enisa-news/how-can-eu-ports-tackle-new-cyber-threats" target="_blank" rel="noopener">
       <span class="artc-tag" data-fr="Cybersécurité portuaire" data-en="Port Cybersecurity">Cybersécurité portuaire</span>
       <h3 class="artc-title2" data-fr="Convergence OT/IT dans les ports : un angle mort encore sous-estimé" data-en="OT/IT convergence in ports: a still-underestimated blind spot">Convergence OT/IT dans les ports : un angle mort encore sous-estimé</h3>
       <p class="artc-desc" data-fr="Une problématique observée de près durant mon stage à Marsa Maroc, où systèmes industriels et réseaux IT cohabitent de plus en plus." data-en="An issue I observed closely during my internship at Marsa Maroc, where industrial systems and IT networks increasingly coexist.">Une problématique observée de près durant mon stage à Marsa Maroc, où systèmes industriels et réseaux IT cohabitent de plus en plus.</p>
       <span class="artc-link" data-fr="Voir les détails" data-en="View details">Voir les détails <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </a>
-    <a class="artc-card" href="https://www.gsma.com/solutions-and-impact/connectivity-for-good/external-affairs/climate-action/energy-efficiency/" target="_blank" rel="noopener">
+    <a class="artc-card" data-idx="06" href="https://www.gsma.com/solutions-and-impact/connectivity-for-good/external-affairs/climate-action/energy-efficiency/" target="_blank" rel="noopener">
       <span class="artc-tag" data-fr="5G &amp; Sobriété énergétique" data-en="5G &amp; Energy Efficiency">5G &amp; Sobriété énergétique</span>
       <h3 class="artc-title2" data-fr="Sobriété énergétique des réseaux 5G : l'enjeu des BBU/RRU" data-en="Energy sobriety in 5G networks: the BBU/RRU challenge">Sobriété énergétique des réseaux 5G : l'enjeu des BBU/RRU</h3>
       <p class="artc-desc" data-fr="Un sujet que j'ai modélisé sous MATLAB Simulink lors de mon étude énergétique d'une station de base 5G." data-en="A topic I modeled in MATLAB Simulink during my energy study of a 5G base station.">Un sujet que j'ai modélisé sous MATLAB Simulink lors de mon étude énergétique d'une station de base 5G.</p>
