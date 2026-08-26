@@ -251,72 +251,115 @@ body.light .stat-lbl{color:rgba(41,63,92,.68);}
 .about-grid{display:grid;grid-template-columns:1fr 350px;gap:60px;align-items:start;}
 .about-para{font-size:17px;line-height:1.88;color:var(--muted);margin-bottom:14px;font-weight:400;}
 .about-para strong{color:var(--text);font-weight:700;}
-.parcours-timeline{margin-top:28px;padding:28px 4px 20px;overflow:hidden;position:relative;}
-.about-grid>.parcours-timeline.pt-full{grid-column:1/-1;width:90%;max-width:1400px;margin:36px auto 0;}
+.parcours-timeline{margin-top:28px;padding:28px 4px 20px;position:relative;}
+.about-grid>.parcours-timeline.pt-full{grid-column:1/-1;width:90%;max-width:1000px;margin:36px auto 0;}
 @media(max-width:900px){.about-grid>.parcours-timeline.pt-full{width:100%;}}
-.pt-track-wrap{position:relative;margin:0 -4px;padding:0 4px 6px;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin;}
-.pt-track-wrap::-webkit-scrollbar{height:5px;}
-.pt-track-wrap::-webkit-scrollbar-thumb{background:rgba(0,255,153,.25);border-radius:4px;}
-.pt-track{position:relative;display:flex;align-items:flex-start;padding-top:24px;min-width:960px;}
-.pt-rail{position:absolute;left:36px;right:36px;top:23px;height:2px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden;}
-body.light .pt-rail{background:rgba(26,37,53,.09);}
-.pt-rail-fill{position:absolute;top:0;bottom:0;left:0;width:400%;background:linear-gradient(90deg,#00ff99,#00c8ff,#7c3aed,#ffb020,#00ff99,#00c8ff);animation:pt-flow 7s linear infinite;}
-@keyframes pt-flow{0%{transform:translateX(0);}100%{transform:translateX(-75%);}}
-.pt-pulse-dot{position:absolute;top:50%;left:0;transform:translate(-50%,-50%);width:9px;height:9px;border-radius:50%;background:#fff;box-shadow:0 0 14px 4px rgba(0,255,153,.75);animation:pt-travel 5.5s ease-in-out infinite;}
-@keyframes pt-travel{0%{left:0%;opacity:0;}6%{opacity:1;}94%{opacity:1;}100%{left:100%;opacity:0;}}
-.pt-node{position:relative;flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 12px;opacity:0;transform:translateY(14px);transition:opacity .65s cubic-bezier(.23,1,.32,1),transform .65s cubic-bezier(.23,1,.32,1);}
-.pt-node.pt-vis{opacity:1;transform:none;}
-.pt-dot{position:relative;z-index:1;flex-shrink:0;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 30% 28%,var(--pc,#00ff99),var(--pc2,#00c8ff));box-shadow:0 0 0 4px var(--bg,#030709),0 0 18px -3px var(--pc,#00ff99);color:#04100a;transition:transform .3s,box-shadow .3s;margin-bottom:16px;}
-.pt-dot svg{width:18px;height:18px;stroke:#04100a;}
-.pt-dot-logo{background:#fff!important;padding:7px;}
-.pt-dot-logo img{width:100%;height:100%;object-fit:contain;}
-.pt-node:hover .pt-dot{transform:scale(1.14);box-shadow:0 0 0 4px var(--bg,#030709),0 0 26px 2px var(--pc,#00ff99);}
-.pt-card{width:100%;min-width:0;transition:transform .3s;}
-.pt-node:hover .pt-card{transform:translateY(-4px);}
-.pt-year{display:inline-block;font-family:var(--font-mono);font-size:9.5px;font-weight:700;letter-spacing:.03em;color:var(--pc,#00ff99);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:3px 10px;border-radius:999px;margin-bottom:8px;white-space:nowrap;}
-body.light .pt-year{background:rgba(0,0,0,.03);}
-.pt-title{font-family:var(--font-title);font-size:14.5px;font-weight:800;color:var(--text);line-height:1.35;margin-bottom:3px;}
-.pt-desc{font-size:12px;color:var(--muted);line-height:1.55;}
-.pt-node-period{flex:1.9;}
-.pt-node.pt-future{flex:0 0 auto;min-width:170px;}
-.pt-dot-future{background:radial-gradient(circle at 32% 28%,#00ff99,#00c8ff)!important;box-shadow:0 0 0 4px var(--bg,#030709),0 0 20px -2px rgba(0,255,153,.7)!important;animation:pt-future-launch 2.6s ease-in-out infinite;}
-.pt-dot-future svg{stroke:#04100a!important;width:18px;height:18px;}
-@keyframes pt-future-launch{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-5px) rotate(-4deg);}}
-.pt-card-future .pt-title{font-size:13px;line-height:1.4;margin-bottom:0;}
-.ft-white{color:var(--text);font-weight:800;}
-.ft-green{color:var(--accent2);font-weight:800;}
+.jt-wrap{position:relative;margin-top:36px;padding:8px 0 4px;}
+.jt-track{position:relative;}
+.jt-track::before{
+  content:'';position:absolute;left:50%;top:0;bottom:0;width:3px;transform:translateX(-50%);
+  background:rgba(255,255,255,.07);border-radius:3px;
+}
+body.light .jt-track::before{background:rgba(26,37,53,.1);}
+.jt-spine-fill{
+  position:absolute;left:50%;top:0;width:3px;transform:translateX(-50%);border-radius:3px;
+  height:0%;background:linear-gradient(180deg,#00ff99,#00c8ff 45%,#7c3aed 75%,#ffb020);
+  box-shadow:0 0 14px 1px rgba(0,255,153,.45);transition:height .15s linear;z-index:1;
+}
+.jt-future-connector{width:3px;height:36px;margin:0 auto;background:rgba(255,176,32,.5);border-radius:3px;}
+body.light .jt-future-connector{background:rgba(37,99,235,.18);}
+.jt-item{position:relative;width:calc(50% - 38px);margin-bottom:44px;opacity:0;transition:opacity .7s cubic-bezier(.23,1,.32,1),transform .7s cubic-bezier(.23,1,.32,1);}
+.jt-item.jt-left{margin-right:auto;transform:translateX(-26px);}
+.jt-item.jt-right{margin-left:auto;transform:translateX(26px);}
+.jt-item.jt-vis{opacity:1;transform:none;}
+.jt-dot{
+  position:absolute;top:2px;z-index:2;width:44px;height:44px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 30% 28%,var(--pc,#00ff99),var(--pc2,#00c8ff));
+  box-shadow:0 0 0 5px var(--bg,#030709),0 0 18px -3px var(--pc,#00ff99);
+  transition:transform .35s cubic-bezier(.23,1,.32,1),box-shadow .35s;
+}
+.jt-item.jt-left .jt-dot{right:-60px;}
+.jt-item.jt-right .jt-dot{left:-60px;}
+.jt-item:hover .jt-dot{transform:scale(1.12);box-shadow:0 0 0 5px var(--bg,#030709),0 0 26px 2px var(--pc,#00ff99);}
+.jt-dot-inner{width:100%;height:100%;border-radius:50%;background:#fff;padding:8px;display:flex;align-items:center;justify-content:center;}
+.jt-dot-inner img{width:100%;height:100%;object-fit:contain;}
+.jt-dot-pulse::after{
+  content:'';position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--pc,#00ff99);
+  opacity:.6;animation:jt-ping 2.2s cubic-bezier(.2,.6,.4,1) infinite;
+}
+@keyframes jt-ping{0%{transform:scale(.85);opacity:.7;}75%,100%{transform:scale(1.55);opacity:0;}}
 
-.pt-card-period{padding-bottom:2px;}
-.pt-sub-rail{position:relative;margin:14px 0 2px;padding-left:0;border-left:none;display:flex;flex-direction:row;flex-wrap:wrap;gap:8px;text-align:left;}
-.pt-sub-item{flex:1;min-width:150px;}
-.pt-sub-item{position:relative;display:flex;gap:9px;align-items:flex-start;transition:transform .25s;padding:8px 9px;border-radius:9px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);}
-body.light .pt-sub-item{background:rgba(0,0,0,.02);border-color:rgba(26,37,53,.08);}
-.pt-sub-item:hover{transform:translateY(-2px);}
-.pt-sub-ico{flex-shrink:0;width:26px;height:26px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 30% 28%,var(--pc,#00ff99),var(--pc2,#00c8ff));color:#04100a;transition:transform .3s;position:relative;border-radius:38% 62% 61% 39% / 45% 40% 60% 55%;}
-.pt-sub-item:hover .pt-sub-ico{transform:scale(1.12) rotate(-6deg);}
-.pt-sub-ico svg{width:13px;height:13px;stroke:#04100a;position:relative;z-index:1;}
-.pt-sub-ico-logo{background:#fff!important;padding:4px;}
-.pt-sub-ico-logo img{width:100%;height:100%;object-fit:contain;position:relative;z-index:1;}
-.pt-sub-body{flex:1;min-width:0;padding-top:1px;}
-.pt-sub-year{font-family:var(--font-mono);font-size:8.5px;font-weight:700;letter-spacing:.03em;color:var(--pc,#00ff99);white-space:nowrap;}
-.pt-sub-title{font-family:var(--font-title);font-size:12.5px;font-weight:700;color:var(--text);line-height:1.3;margin:3px 0 2px;}
+.jt-card{
+  position:relative;background:rgba(0,10,5,.4);border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;padding:20px 24px;transition:transform .3s cubic-bezier(.23,1,.32,1),border-color .3s,box-shadow .3s;
+}
+body.light .jt-card{background:rgba(255,255,255,.92);border-color:rgba(26,37,53,.1);}
+.jt-item.jt-left .jt-card{text-align:right;}
+.jt-item:hover .jt-card{transform:translateY(-4px);border-color:rgba(var(--pc-rgb,0,255,153),.4);box-shadow:0 16px 34px -20px rgba(var(--pc-rgb,0,255,153),.55);}
+.jt-year{display:inline-block;font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:.05em;color:var(--pc,#00ff99);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:4px 11px;border-radius:999px;margin-bottom:10px;white-space:nowrap;}
+body.light .jt-year{background:rgba(0,0,0,.03);}
+.jt-title{font-family:var(--font-title);font-size:17px;font-weight:800;color:var(--text);line-height:1.32;margin-bottom:4px;}
+.jt-desc{font-size:13.5px;color:var(--muted);line-height:1.6;}
+
+.jt-toggle{
+  display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:7px 13px;
+  font-family:var(--font-mono);font-size:10.5px;font-weight:700;letter-spacing:.04em;
+  color:var(--pc,#00ff99);background:rgba(var(--pc-rgb,0,255,153),.08);border:1px solid rgba(var(--pc-rgb,0,255,153),.25);
+  border-radius:999px;cursor:pointer;transition:.25s;
+}
+.jt-toggle:hover{background:rgba(var(--pc-rgb,0,255,153),.16);}
+.jt-toggle svg{width:11px;height:11px;transition:transform .3s cubic-bezier(.23,1,.32,1);}
+.jt-toggle[aria-expanded="true"] svg{transform:rotate(180deg);}
+.jt-item.jt-left .jt-toggle{flex-direction:row-reverse;}
+
+.jt-sub{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.23,1,.32,1);}
+.jt-sub.jt-open{grid-template-rows:1fr;}
+.jt-sub-inner{overflow:hidden;}
+.jt-sub-list{display:flex;flex-direction:column;gap:9px;margin-top:14px;padding-top:14px;border-top:1px dashed rgba(255,255,255,.1);}
+body.light .jt-sub-list{border-top-color:rgba(26,37,53,.12);}
+.jt-item.jt-left .jt-sub-list{border-color:rgba(255,255,255,.1);}
+.jt-sub-item{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border-radius:10px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);transition:transform .25s;}
+body.light .jt-sub-item{background:rgba(0,0,0,.02);border-color:rgba(26,37,53,.08);}
+.jt-item.jt-left .jt-sub-item{flex-direction:row-reverse;text-align:right;}
+.jt-sub-item:hover{transform:translateX(3px);}
+.jt-item.jt-left .jt-sub-item:hover{transform:translateX(-3px);}
+.jt-sub-ico{flex-shrink:0;width:26px;height:26px;border-radius:8px;background:#fff;padding:4px;display:flex;align-items:center;justify-content:center;}
+.jt-sub-ico img{width:100%;height:100%;object-fit:contain;}
+.jt-sub-year{display:block;font-family:var(--font-mono);font-size:8.5px;font-weight:700;letter-spacing:.03em;color:var(--pc,#00ff99);white-space:nowrap;}
+.jt-sub-title{font-family:var(--font-title);font-size:12.5px;font-weight:700;color:var(--text);line-height:1.3;margin:2px 0 1px;}
+.jt-sub-desc{font-size:11.5px;color:var(--muted);line-height:1.45;}
+
+.jt-item:last-child{margin-bottom:0;}
+.jt-item.jt-future{width:100%;margin-left:0;margin-top:0;text-align:center;}
+.jt-item.jt-future .jt-dot{left:50%;top:2px;transform:translateX(-50%);}
+.jt-item.jt-future:hover .jt-dot{transform:translateX(-50%) scale(1.12);}
+.jt-item.jt-future .jt-card{margin-top:58px;display:inline-block;text-align:center;background:linear-gradient(135deg,rgba(0,255,153,.07),rgba(0,200,255,.03));}
+.jt-item.jt-future .jt-title{font-size:16px;}
+.ft-white{color:var(--text);}
+.ft-green{color:var(--accent2);}
+
 @media(max-width:760px){
-  .pt-track-wrap{overflow:visible;margin:0;padding:0;}
-  .pt-track{display:flex;flex-direction:column;min-width:0;padding-top:0;align-items:stretch;}
-  .pt-rail,.pt-pulse-dot{display:none;}
-  .pt-node{flex:none!important;width:100%;min-width:0;flex-direction:row;align-items:flex-start;text-align:left;padding:0 0 32px 54px;position:relative;}
-  .pt-node::before{content:'';position:absolute;left:19px;top:40px;bottom:-8px;width:2px;background:rgba(255,255,255,.1);}
-  .pt-node:last-child::before{display:none;}
-  .pt-dot{position:absolute;left:0;top:0;margin:0;}
-  .pt-card{width:100%;text-align:left;}
-  .pt-sub-rail{flex-direction:column;}
-  .pt-sub-item{min-width:0;}
+  .jt-track::before,.jt-spine-fill{left:19px;transform:none;}
+  .jt-item,.jt-item.jt-left,.jt-item.jt-right{width:100%;margin:0 0 30px;padding-left:52px;transform:translateY(16px)!important;text-align:left!important;}
+  .jt-item.jt-vis{transform:none!important;}
+  .jt-item.jt-left .jt-dot,.jt-item.jt-right .jt-dot{left:0;right:auto;}
+  .jt-item.jt-left .jt-card,.jt-item.jt-right .jt-card{text-align:left;}
+  .jt-item.jt-left .jt-toggle{flex-direction:row;}
+  .jt-item.jt-left .jt-sub-item{flex-direction:row;text-align:left;}
+  .jt-item.jt-left .jt-sub-item:hover{transform:translateX(3px);}
+  .jt-future-connector{margin:0 0 0 19px;}
+  .jt-item.jt-future{padding-left:52px;text-align:left;}
+  .jt-item.jt-future .jt-dot{left:0;transform:none;}
+  .jt-item.jt-future:hover .jt-dot{transform:scale(1.12);}
+  .jt-item.jt-future .jt-card{margin-top:0;display:block;text-align:left;}
 }
 @media(max-width:480px){
-  .pt-node{padding-left:48px;}
-  .pt-node::before{left:16px;}
+  .jt-dot{width:38px;height:38px;}
+  .jt-item.jt-left .jt-dot,.jt-item.jt-right .jt-dot{left:0;}
+  .jt-item{padding-left:46px;}
+  .jt-item.jt-future{padding-left:46px;}
 }
-@media(max-width:480px){.parcours-timeline{padding:22px 16px 16px;}.pt-dot{width:34px;height:34px;}.pt-dot svg{width:15px;height:15px;}}
 .school-card{border:1px solid rgba(0,255,153,.11);border-radius:12px;overflow:hidden;background:rgba(0,10,5,.38);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);margin-bottom:18px;cursor:pointer;transition:border-color .3s,box-shadow .3s;}
 .school-card:hover{border-color:rgba(0,255,153,.32);box-shadow:0 0 22px rgba(0,255,153,.1);}
 .school-img-wrap{position:relative;overflow:hidden;height:155px;}
@@ -716,7 +759,7 @@ body.light .proj-fs-tag{background:rgba(37,99,235,.07);color:var(--accent);borde
 
 .retour-quote{display:flex;align-items:flex-start;gap:18px;margin-top:40px;padding:28px 32px;border-radius:16px;background:linear-gradient(135deg,rgba(0,255,153,.06),rgba(0,200,255,.03));border:1px solid rgba(0,255,153,.14);}
 .rq-mark{width:26px;height:26px;flex-shrink:0;color:var(--accent2);opacity:.55;margin-top:2px;}
-.retour-quote p{font-family:var(--font-serif);font-style:italic;font-size:clamp(16px,2vw,21px);line-height:1.55;color:var(--text);font-weight:300;}
+.retour-quote p{font-family:var(--font-serif);font-style:normal;font-weight:500;font-size:clamp(16px,2vw,21px);line-height:1.55;letter-spacing:-.005em;color:var(--text);}
 body.light .retour-quote{background:linear-gradient(135deg,rgba(37,99,235,.05),rgba(13,148,136,.03));border-color:rgba(37,99,235,.16);}
 
 .artc-title{margin:52px 0 20px;}
@@ -1367,7 +1410,7 @@ body.light .retour-card{background:radial-gradient(140% 160% at 100% 0%,rgba(var
 }
 body.light .retour-quote{background:linear-gradient(135deg,rgba(37,99,235,.05),rgba(13,148,136,.03));}
 .retour-quote .rq-mark{width:30px;height:30px;flex-shrink:0;color:var(--accent2);opacity:.6;margin-top:4px;position:relative;z-index:1;}
-.retour-quote p{position:relative;z-index:1;font-family:var(--font-serif);font-style:italic;font-weight:300;font-size:clamp(17px,2.1vw,23px);line-height:1.6;color:var(--text);}
+.retour-quote p{position:relative;z-index:1;font-family:var(--font-serif);font-style:normal;font-weight:500;font-size:clamp(17px,2.1vw,23px);line-height:1.6;letter-spacing:-.005em;color:var(--text);}
 
 /* ===== Séparation visuelle avec "Articles & ressources techniques" ===== */
 .artc-title{margin:64px 0 22px;padding-top:40px;border-top:1px solid rgba(255,255,255,.07);}
@@ -1722,72 +1765,83 @@ body.light .artc-title{border-top-color:rgba(37,99,235,.1);}
     </div>
     <div class="parcours-timeline rv d3 pt-full">
         <div class="sys-label"><span class="live-dot"></span><span class="lbl-slash">//</span><span data-fr="Mon parcours" data-en="My journey">Mon parcours</span></div>
-        <div class="pt-track-wrap"><div class="pt-track">
-          <div class="pt-rail"><div class="pt-rail-fill"></div><div class="pt-pulse-dot"></div></div>
 
-          <div class="pt-node" data-i="0" style="--pc:#00c8ff;--pc2:#7c3aed">
-            <span class="pt-dot pt-dot-logo"><img src="bac.png" alt="Baccalauréat" loading="lazy"></span>
-            <div class="pt-card">
-              <span class="pt-year">2020 – 2021</span>
-              <h4 class="pt-title" data-fr="Baccalauréat" data-en="Baccalaureate">Baccalauréat</h4>
-              <p class="pt-desc" data-fr="Sciences Physiques · Option BIOF" data-en="Physical Sciences · BIOF track">Sciences Physiques · Option BIOF</p>
+        <div class="jt-wrap" id="jtWrap">
+          <div class="jt-track" id="jtTrack">
+          <div class="jt-spine-fill" id="jtFill"></div>
+
+          <div class="jt-item jt-left" data-jt="0" style="--pc:#00c8ff;--pc2:#7c3aed;--pc-rgb:0,200,255">
+            <span class="jt-dot"><span class="jt-dot-inner"><img src="bac.png" alt="Baccalauréat" loading="lazy"></span></span>
+            <div class="jt-card">
+              <span class="jt-year">2020 – 2021</span>
+              <h4 class="jt-title" data-fr="Baccalauréat" data-en="Baccalaureate">Baccalauréat</h4>
+              <p class="jt-desc" data-fr="Sciences Physiques · Option BIOF" data-en="Physical Sciences · BIOF track">Sciences Physiques · Option BIOF</p>
             </div>
           </div>
 
-          <div class="pt-node" data-i="1" style="--pc:#ffb020;--pc2:#ff5c5c">
-            <span class="pt-dot pt-dot-logo"><img src="classes preparatoires.png" alt="Classes Préparatoires" loading="lazy"></span>
-            <div class="pt-card">
-              <span class="pt-year" data-fr="Sept. 2021 – Juin 2023" data-en="Sep. 2021 – Jun. 2023">Sept. 2021 – Juin 2023</span>
-              <h4 class="pt-title" data-fr="Classes Préparatoires" data-en="Preparatory Classes">Classes Préparatoires</h4>
-              <p class="pt-desc" data-fr="Mathématiques &amp; Physique" data-en="Mathematics &amp; Physics">Mathématiques &amp; Physique</p>
+          <div class="jt-item jt-right" data-jt="1" style="--pc:#ffb020;--pc2:#ff5c5c;--pc-rgb:255,176,32">
+            <span class="jt-dot"><span class="jt-dot-inner"><img src="classes preparatoires.png" alt="Classes Préparatoires" loading="lazy"></span></span>
+            <div class="jt-card">
+              <span class="jt-year" data-fr="Sept. 2021 – Juin 2023" data-en="Sep. 2021 – Jun. 2023">Sept. 2021 – Juin 2023</span>
+              <h4 class="jt-title" data-fr="Classes Préparatoires" data-en="Preparatory Classes">Classes Préparatoires</h4>
+              <p class="jt-desc" data-fr="Mathématiques &amp; Physique" data-en="Mathematics &amp; Physics">Mathématiques &amp; Physique</p>
             </div>
           </div>
 
-          <div class="pt-node pt-node-period" data-i="2" style="--pc:#00ff99;--pc2:#00c8ff">
-            <span class="pt-dot pt-dot-logo"><img src="logo-ensa-fes.png" alt="ENSA Fès" loading="lazy"></span>
-            <div class="pt-card pt-card-period">
-              <span class="pt-year" data-fr="Sept. 2023 – Juin 2026" data-en="Sep. 2023 – Jun. 2026">Sept. 2023 – Juin 2026</span>
-              <h4 class="pt-title">ENSA Fès</h4>
-              <p class="pt-desc" data-fr="Génie Télécommunications et Réseaux" data-en="Telecommunications &amp; Network Engineering">Génie Télécommunications et Réseaux</p>
+          <div class="jt-item jt-left" data-jt="2" style="--pc:#00ff99;--pc2:#00c8ff;--pc-rgb:0,255,153">
+            <span class="jt-dot"><span class="jt-dot-inner"><img src="logo-ensa-fes.png" alt="ENSA Fès" loading="lazy"></span></span>
+            <div class="jt-card">
+              <span class="jt-year" data-fr="Sept. 2023 – Juin 2026" data-en="Sep. 2023 – Jun. 2026">Sept. 2023 – Juin 2026</span>
+              <h4 class="jt-title">ENSA Fès</h4>
+              <p class="jt-desc" data-fr="Génie Télécommunications et Réseaux" data-en="Telecommunications &amp; Network Engineering">Génie Télécommunications et Réseaux</p>
 
-              <div class="pt-sub-rail">
-                <div class="pt-sub-item" style="--pc:#ffb020;--pc2:#ff5c5c">
-                  <span class="pt-sub-ico pt-sub-ico-logo"><img src="logo-marsa-maroc.png" alt="Marsa Maroc" loading="lazy"></span>
-                  <div class="pt-sub-body">
-                    <span class="pt-sub-year" data-fr="Juil. – Sept. 2024" data-en="Jul. – Sep. 2024">Juil. – Sept. 2024</span>
-                    <h5 class="pt-sub-title" data-fr="Stage d'initiation" data-en="Introductory internship">Stage d'initiation</h5>
-                    <p class="pt-sub-desc">Marsa Maroc · Port de Casablanca</p>
-                  </div>
-                </div>
+              <button class="jt-toggle" type="button" aria-expanded="false">
+                <span data-fr="Voir les stages" data-en="View internships">Voir les stages</span>
+                <svg viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
 
-                <div class="pt-sub-item" style="--pc:#00c8ff;--pc2:#7c3aed">
-                  <span class="pt-sub-ico pt-sub-ico-logo"><img src="logo-huawei.png" alt="Huawei Technologies" loading="lazy"></span>
-                  <div class="pt-sub-body">
-                    <span class="pt-sub-year" data-fr="Juil. – Sept. 2025" data-en="Jul. – Sep. 2025">Juil. – Sept. 2025</span>
-                    <h5 class="pt-sub-title" data-fr="Stage d'application (PFA)" data-en="Development internship (PFA)">Stage d'application (PFA)</h5>
-                    <p class="pt-sub-desc">Huawei Technologies Morocco</p>
-                  </div>
-                </div>
-
-                <div class="pt-sub-item" style="--pc:#00ff99;--pc2:#00c8ff">
-                  <span class="pt-sub-ico pt-sub-ico-logo"><img src="logo-synapsis.png" alt="Synapsis-KS-Morocco" loading="lazy"></span>
-                  <div class="pt-sub-body">
-                    <span class="pt-sub-year" data-fr="Fév. – Juin 2026" data-en="Feb. – Jun. 2026">Fév. – Juin 2026</span>
-                    <h5 class="pt-sub-title" data-fr="Projet de Fin d'Études (PFE)" data-en="Final Year Project (PFE)">Projet de Fin d'Études (PFE)</h5>
-                    <p class="pt-sub-desc">Synapsis-KS-Morocco</p>
+              <div class="jt-sub">
+                <div class="jt-sub-inner">
+                  <div class="jt-sub-list">
+                    <div class="jt-sub-item">
+                      <span class="jt-sub-ico"><img src="logo-marsa-maroc.png" alt="Marsa Maroc" loading="lazy"></span>
+                      <div>
+                        <span class="jt-sub-year" data-fr="Juil. – Sept. 2024" data-en="Jul. – Sep. 2024">Juil. – Sept. 2024</span>
+                        <h5 class="jt-sub-title" data-fr="Stage d'initiation" data-en="Introductory internship">Stage d'initiation</h5>
+                        <p class="jt-sub-desc">Marsa Maroc · Port de Casablanca</p>
+                      </div>
+                    </div>
+                    <div class="jt-sub-item">
+                      <span class="jt-sub-ico"><img src="logo-huawei.png" alt="Huawei Technologies" loading="lazy"></span>
+                      <div>
+                        <span class="jt-sub-year" data-fr="Juil. – Sept. 2025" data-en="Jul. – Sep. 2025">Juil. – Sept. 2025</span>
+                        <h5 class="jt-sub-title" data-fr="Stage d'application (PFA)" data-en="Development internship (PFA)">Stage d'application (PFA)</h5>
+                        <p class="jt-sub-desc">Huawei Technologies Morocco</p>
+                      </div>
+                    </div>
+                    <div class="jt-sub-item">
+                      <span class="jt-sub-ico"><img src="logo-synapsis.png" alt="Synapsis-KS-Morocco" loading="lazy"></span>
+                      <div>
+                        <span class="jt-sub-year" data-fr="Fév. – Juin 2026" data-en="Feb. – Jun. 2026">Fév. – Juin 2026</span>
+                        <h5 class="jt-sub-title" data-fr="Projet de Fin d'Études (PFE)" data-en="Final Year Project (PFE)">Projet de Fin d'Études (PFE)</h5>
+                        <p class="jt-sub-desc">Synapsis-KS-Morocco</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          </div>
 
-          <div class="pt-node pt-future" data-i="3">
-            <span class="pt-dot pt-dot-future pt-dot-logo"><img src="chemin.png" alt="Chemin continue" loading="lazy"></span>
-            <div class="pt-card pt-card-future">
-              <h4 class="pt-title"><span class="ft-white" data-fr="Le chemin continue" data-en="The journey continues">Le chemin continue</span> <span class="ft-green" data-fr="vers de nouvelles opportunités" data-en="towards new opportunities">vers de nouvelles opportunités</span></h4>
+          <div class="jt-future-connector"></div>
+          <div class="jt-item jt-future" data-jt="3" style="--pc:#00ff99;--pc2:#00c8ff;--pc-rgb:0,255,153">
+            <span class="jt-dot jt-dot-pulse"><span class="jt-dot-inner"><img src="chemin.png" alt="Chemin continue" loading="lazy"></span></span>
+            <div class="jt-card">
+              <h4 class="jt-title"><span class="ft-white" data-fr="Le chemin continue" data-en="The journey continues">Le chemin continue</span> <span class="ft-green" data-fr="vers de nouvelles opportunités" data-en="towards new opportunities">vers de nouvelles opportunités</span></h4>
             </div>
           </div>
-        </div></div>
+        </div>
       </div>
   </div>
 </section>
@@ -3036,19 +3090,47 @@ langBtn.addEventListener('click',()=>switchLang(currentLang==='fr'?'en':'fr'));
 const savedLang=safeGet('lang');
 if(savedLang&&savedLang!=='fr')switchLang(savedLang);
 
-/* --- Mon parcours : reveal animé au scroll --- */
+/* --- Mon parcours : timeline interactive (reveal, accordéon, remplissage au scroll) --- */
 (function(){
-  const nodes=document.querySelectorAll('.pt-node');
-  if(!nodes.length)return;
+  const items=document.querySelectorAll('.jt-item');
+  if(!items.length)return;
+
   const obs=new IntersectionObserver((entries,o)=>{
     entries.forEach(e=>{
       if(!e.isIntersecting)return;
-      const i=+e.target.dataset.i||0;
-      setTimeout(()=>e.target.classList.add('pt-vis'),i*110);
+      const i=+e.target.dataset.jt||0;
+      setTimeout(()=>e.target.classList.add('jt-vis'),i*100);
       o.unobserve(e.target);
     });
-  },{threshold:.3,rootMargin:'0px 0px -30px 0px'});
-  nodes.forEach(n=>obs.observe(n));
+  },{threshold:.25,rootMargin:'0px 0px -30px 0px'});
+  items.forEach(it=>obs.observe(it));
+
+  document.querySelectorAll('.jt-toggle').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const sub=btn.nextElementSibling;
+      const open=btn.getAttribute('aria-expanded')==='true';
+      btn.setAttribute('aria-expanded',String(!open));
+      sub.classList.toggle('jt-open',!open);
+    });
+  });
+
+  const wrap=document.getElementById('jtTrack');
+  const fill=document.getElementById('jtFill');
+  if(wrap&&fill){
+    let ticking=false;
+    const update=()=>{
+      const r=wrap.getBoundingClientRect();
+      const vh=window.innerHeight||document.documentElement.clientHeight;
+      const total=r.height;
+      const progressed=Math.min(Math.max(vh*0.75-r.top,0),total);
+      fill.style.height=(total>0?(progressed/total*100):0)+'%';
+      ticking=false;
+    };
+    const onScroll=()=>{if(!ticking){requestAnimationFrame(update);ticking=true;}};
+    window.addEventListener('scroll',onScroll,{passive:true});
+    window.addEventListener('resize',onScroll);
+    update();
+  }
 })();
 
 const rvObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});},{threshold:.07,rootMargin:'0px 0px -28px 0px'});
